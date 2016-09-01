@@ -1,0 +1,6 @@
+public class DoMath {
+	public static void main(String[]args){
+		System.out.print(Calculate.square(10));
+		System.out.print(Calculate.toRadians(0.1666));
+	}
+}
