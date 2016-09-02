@@ -21,9 +21,8 @@ public class Calculate {
 	public static double discriminant(double a, double b, double c){
 		return((b*b)-(4*a*c));
 	}
-	public static String toImproperFrac(int a, int b, int c){
-		String d = Integer.toString(a*c + b);
-		return(d + "/" + c);
+	public static String toImproperFrac(int a, int b){
+		return(a/b_a%b);
 	}
 	public static int toMixedNum(int num){
 		return(number*number);

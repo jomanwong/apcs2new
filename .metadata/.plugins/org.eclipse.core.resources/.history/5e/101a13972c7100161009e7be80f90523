@@ -23,7 +23,7 @@ public class Calculate {
 	}
 	public static String toImproperFrac(int a, int b, int c){
 		String d = Integer.toString(a*c + b);
-		return(d + "/" + c);
+		return(d);
 	}
 	public static int toMixedNum(int num){
 		return(number*number);

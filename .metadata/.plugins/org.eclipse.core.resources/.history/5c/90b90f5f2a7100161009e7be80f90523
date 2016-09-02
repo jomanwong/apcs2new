@@ -19,11 +19,10 @@ public class Calculate {
 		return(deg*(3.14159/180));
 	}
 	public static double discriminant(double a, double b, double c){
-		return((b*b)-(4*a*c));
+		return();
 	}
-	public static String toImproperFrac(int a, int b, int c){
-		String d = Integer.toString(a*c + b);
-		return(d + "/" + c);
+	public static int toImproperFrac(int num){
+		return(number*number);
 	}
 	public static int toMixedNum(int num){
 		return(number*number);

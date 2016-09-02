@@ -22,8 +22,7 @@ public class Calculate {
 		return((b*b)-(4*a*c));
 	}
 	public static String toImproperFrac(int a, int b, int c){
-		String d = Integer.toString(a*c + b);
-		return(d + "/" + c);
+		return(a * c + b);
 	}
 	public static int toMixedNum(int num){
 		return(number*number);
