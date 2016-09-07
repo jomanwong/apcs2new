@@ -1,9 +1,0 @@
-
-public class Fahrenheit_to_Celsius {
-	public static void main (String[]args){
-		//fahrenheit value \/\/\/\/
-		double fahrenheit = 46.8;
-		double celsius = (fahrenheit - 32)*(5/9);
-		System.out.print(celsius);
-	}
-}

@@ -5,5 +5,8 @@ public class DoMath {
 		System.out.println(Calculate.toRadians(270));
 		System.out.println(Calculate.discriminant(1, 2, 1));
 		System.out.println(Calculate.toImproperFrac(3, 1, 2));
+		System.out.println(Calculate.toMixedNum(2, 6));
+		System.out.println(Calculate.foil(2, 3, 6, -7, "n"));
+		System.out.println(Calculate.isDivisibleBy(3, 6));
 	}
 }
