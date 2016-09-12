@@ -9,6 +9,9 @@ public class DoMath {
 		System.out.println(Calculate.foil(2, 3, 6, -7, "n"));
 		System.out.println(Calculate.isDivisibleBy(3, 8));
 		System.out.println(Calculate.absValue(-5));
-		System.out.println(Calculate.max(9,9));
+		System.out.println(Calculate.max(9, 9));
+		System.out.println(Calculate.max(1.2, 9.0, 1.1));
+		System.out.println(Calculate.min(99,2));
+		System.out.println(Calculate.round2(8.765));
 	}
 }

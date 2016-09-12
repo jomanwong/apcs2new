@@ -59,21 +59,30 @@ public class Calculate {
 	public static int max(int a, int b){
 		if (a > b){
 			return(a);
-		}else if(a == b){
-			System.out.println("They are equal");
 		}else{
 			return(b);
 		}
 	}
-	public static int square(int num){
-		return(num*num);
+	public static double max(double a, double b, double c){
+		if (a > b && a > c){ //test a
+			return(a);
+		}else if(b > a && b > c){//test b
+			return(b);
+		}else{
+			return c;
+		}
 	}
-	public static int square(int num){
-		return(num*num);
+	public static int min (int a, int b){
+		if (a>b){
+			return(a);
+		}else{
+			return b;
+		}
 	}
-	public static int square(int num){
-		return(num*num);
+	public static double round2(double num){
+		return(Math.round(num*100.00)/100.00);
 	}
 //end of part 2
-
+	
+	
 }
