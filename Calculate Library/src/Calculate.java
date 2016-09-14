@@ -80,9 +80,29 @@ public class Calculate {
 		}
 	}
 	public static double round2(double num){
-		return(Math.round(num*100.00)/100.00);
+		double num2 = (int)num*100 + 0.0;
+		double answer = num2/100 ;
+		return answer;
 	}
 //end of part 2
-	
+	public static double exponent(double num, int raiser){
+		double num2 = 1;
+		for(int i = 0; i < raiser;i++){
+			num2 = num2 * num;
+		}
+		return num2;
+	}
+	/*public static double round2(double num){
+		return(Math.round(num*100.00)/100.00);
+	}
+	public static double round2(double num){
+		return(Math.round(num*100.00)/100.00);
+	}
+	public static double round2(double num){
+		return(Math.round(num*100.00)/100.00);
+	}
+	public static double round2(double num){
+		return(Math.round(num*100.00)/100.00);
+	}*/
 	
 }
