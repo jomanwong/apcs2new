@@ -80,7 +80,9 @@ public class Calculate {
 		}
 	}
 	public static double round2(double num){
-		
+		BigDecimal num2 = new BigDecimal(num);
+		num2 = num2.setScale(2, RoundingMode.HALF_UP);
+		return num2;
 	}
 //end of part 2
 	public static double exponent(double num, int raiser){

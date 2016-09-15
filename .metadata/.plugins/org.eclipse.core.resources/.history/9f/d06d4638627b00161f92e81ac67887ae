@@ -80,7 +80,9 @@ public class Calculate {
 		}
 	}
 	public static double round2(double num){
-		
+		double num2 = num*100.00 + 0.0;
+		double answer = num2/100.00 ;
+		return answer;
 	}
 //end of part 2
 	public static double exponent(double num, int raiser){
