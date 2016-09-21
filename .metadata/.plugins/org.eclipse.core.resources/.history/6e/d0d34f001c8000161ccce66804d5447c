@@ -1,0 +1,12 @@
+// Joman Wong APCS period 2
+public class Fahrenheit_to_Celsius {
+	public static void main (String[]args){
+		//fahrenheit value \/\/\/\/
+		double fahrenheit = 62.3;
+;
+		double celsius = (fahrenheit - 32)/9*5;
+		celsius = Math.round(celsius * 100.0)/100.0 ;
+		System.out.print("The rounded Celsius equivalent of "+ fahrenheit + "degrees Fahrenheit" + ":");
+		System.out.print("\n" + celsius);
+	}
+}
