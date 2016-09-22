@@ -79,23 +79,25 @@ public class Calculate {
 			return b;
 		}
 	}
-	public static double round2(double num){
-		double num2 = new double(num);
-		num2 = num2.setScale(2, RoundingMode.HALF_UP);
-		return num2;
-	}
+/*	public static double round2(double num){
+		
+	}*/
 //end of part 2
 	public static double exponent(double num, int raiser){
 		double num2 = 1;
-		for(int i = 0; i < raiser;i++){
-			num2 = num2 * num;
+		if(raiser < 0){
+			return(-1);
+		}else{
+			for(int i = 0; i < raiser;i++){
+				num2 = num2 * num;
+			}
 		}
 		return num2;
 	}
-	/*public static double round2(double num){
+	public static int factorial(int num){
 		return(Math.round(num*100.00)/100.00);
 	}
-	public static double round2(double num){
+	/*public static double round2(double num){
 		return(Math.round(num*100.00)/100.00);
 	}
 	public static double round2(double num){

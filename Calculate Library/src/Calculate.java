@@ -95,12 +95,15 @@ public class Calculate {
 		return num2;
 	}
 	public static int factorial(int num){
+		for(int i = num-1; i > 0; i-= 1){
+			num = num*i;
+		}
+		return num;
+	}
+	public static boolean isPrime(double num){
 		return(Math.round(num*100.00)/100.00);
 	}
 	/*public static double round2(double num){
-		return(Math.round(num*100.00)/100.00);
-	}
-	public static double round2(double num){
 		return(Math.round(num*100.00)/100.00);
 	}
 	public static double round2(double num){
