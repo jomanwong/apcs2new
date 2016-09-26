@@ -101,7 +101,7 @@ public class Calculate {
 		return num;
 	}
 	public static boolean isPrime(double num){
-		
+		return(Math.round(num*100.00)/100.00);
 	}
 	/*public static double round2(double num){
 		return(Math.round(num*100.00)/100.00);
