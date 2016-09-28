@@ -12,9 +12,12 @@ public class DoMath {
 		System.out.println(Calculate.max(9, 9));
 		System.out.println(Calculate.max(1.2, 9.0, 1.1));
 		System.out.println(Calculate.min(99,2));
-		//System.out.println(Calculate.round2(8.7895));
+		System.out.println(Calculate.round2(8.7895));
 		System.out.println(Calculate.exponent(2, 3));
 		System.out.println(Calculate.factorial(5));
-		
+		System.out.println(Calculate.isPrime(-18));
+        System.out.println(Calculate.gcd(16, 28));
+        System.out.println(Calculate.sqrt(16));
+        System.out.println(Calculate.quadForm(2, -8, 6));
 	}
 }

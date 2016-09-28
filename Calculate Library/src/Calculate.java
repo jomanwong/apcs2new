@@ -79,9 +79,16 @@ public class Calculate {
 			return b;
 		}
 	}
-/*	public static double round2(double num){
-		
-	}*/
+	public static double round2(double num){
+		   int a =(int)(num*100);
+		   double x;
+		   if ((a+0.5)>= (num * 100)){
+		   x = a/100.00;
+		   return(x);
+		   }else{ x=(a+1)/100.00;
+		   return (x);
+		   }
+	    }
 //end of part 2
 	public static double exponent(double num, int raiser){
 		double num2 = 1;
@@ -100,14 +107,40 @@ public class Calculate {
 		}
 		return num;
 	}
-	public static boolean isPrime(double num){
-		
-	}
-	/*public static double round2(double num){
-		return(Math.round(num*100.00)/100.00);
-	}
-	public static double round2(double num){
-		return(Math.round(num*100.00)/100.00);
-	}*/
-	
+	public static boolean isPrime(int a){
+        if(absValue(a) < 4){
+        	return true;
+        }else if (absValue(a) % 2 == 0 || absValue(a) % 3 == 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+	public static int gcd(int a, int b){
+        while (b > 0){
+            int c = b;
+            b = a % b;
+            a = c;
+        }
+        return a;
+    }
+	public static double sqrt(double a){
+	    double x=0;
+	    while ((a-x*x)>0.0001){
+		    x=x+0.0001;
+	    }
+	    return x;
+    }
+	public static String quadForm(int a, int b, int c){
+        double sqrtOfDis = sqrt(discriminant(a, b, c));
+        double root1 = round2((- b + sqrtOfDis)/(2*a));
+        double root2 = round2((- b - sqrtOfDis)/(2*a));
+        if( root1 == root2){
+        	return String.valueOf(root1);
+        }else if(sqrt(discriminant(a, b, c)) <= 0){
+            return "no real roots"; 
+        }else{
+            return Double.toString(root1) + " and " + Double.toString(root2);
+        }
+    }
 }
