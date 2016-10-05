@@ -1,0 +1,7 @@
+package exercise;
+
+public class ApcsTest {
+	public static void main(String[]arg){
+		System.out.println((double)21/36);
+	}
+}

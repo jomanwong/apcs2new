@@ -1,0 +1,9 @@
+package exercise;
+
+public class ApcsTest{
+	public static void main(String[]args){
+		System.out.println(50 - 42 % 5 * 3);
+	
+	}
+}
+	

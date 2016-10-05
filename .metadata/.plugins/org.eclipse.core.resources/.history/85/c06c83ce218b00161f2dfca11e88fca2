@@ -1,0 +1,16 @@
+package exercise;
+
+public class ApcsTest {
+	public static void main(String[]arg){
+		int j = 1;
+		for (int i = 3; i <= 15; i += 2){
+			if(j == 1){
+				System.out.print(j + " ");
+				j++;
+			}else{
+				j += (i-2);
+				System.out.print(j + " ");
+			}
+		}
+	}
+}
