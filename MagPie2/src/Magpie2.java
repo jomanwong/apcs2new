@@ -14,12 +14,19 @@ public class Magpie2 {
 	public String getResponse(String statement) {
 		String response = "";
 		if (statement.indexOf("no") >= 0) {
-			response = "Why so negative?";
+			response = "Why not?";
 		} else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0) {
 			response = "Tell me more about your family.";
+		}else if(statement.indexOf("lathem") >= 0
+				|| statement.indexOf("dryer") >= 0
+				|| statement.indexOf("hensley") >=0){
+			response = "Sounds like a good teacher.";
+		}else if(statement.indexOf("my family") >= 0){
+			response = "Nice.";
+		}else if(statement.indexOf("")){
 		} else {
 			response = getRandomResponse();
 		}

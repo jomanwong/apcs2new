@@ -1,8 +1,0 @@
-package exercise;
-
-public class HourglassCode {
-	public static void main(String[]args){
-		System.out.println("|\"\"\"\"\"\"\"\"\"\"|");
-	}
-	
-}
