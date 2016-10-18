@@ -24,12 +24,9 @@ public class Magpie2 {
 				|| statement.indexOf("dryer") >= 0
 				|| statement.indexOf("hensley") >=0){
 			response = "Sounds like a good teacher.";
-		}else if(statement.indexOf("my family ") >= 0){
+		}else if(statement.indexOf("my family") >= 0){
 			response = "Nice.";
-		}else if(statement.indexOf("this one time") >= 0){
-			response = "cool!";
-		}else if(statement.indexOf("") >=0){
-			response = "I know, right!";
+		}else if(statement.indexOf("")){
 		} else {
 			response = getRandomResponse();
 		}

@@ -28,7 +28,7 @@ public class Magpie2 {
 			response = "Nice.";
 		}else if(statement.indexOf("this one time") >= 0){
 			response = "cool!";
-		}else if(statement.indexOf("") >=0){
+		}else if(statement.indexOf("kinson is a fag") >=0){
 			response = "I know, right!";
 		} else {
 			response = getRandomResponse();
