@@ -55,8 +55,8 @@ public class Calculate {
 		if (y > 0){
 			return(a + e + "^2 + " + b + e + " " + "+ " + y);
 		}else{
-			return (a + e + "^2 + " + b + e + " " + "– " + y*-1); // – vs - from fmy keyboard caused a problem with the
-		}														// testDoMath
+			return (a + e + "^2 + " + b + e + " " + "- " + absValue(y));
+		}
 	}
 //end of part 1
 	//checks if one integer is evenly divisible by another
@@ -98,9 +98,9 @@ public class Calculate {
 	//returns the smaller of the two integers passed
 	public static int min (int a, int b){
 		if (a>b){
-			return(b);
+			return(a);
 		}else{
-			return a;
+			return b;
 		}
 	}
 	//rounds a double to 2 decimal places

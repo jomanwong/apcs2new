@@ -1,8 +1,3 @@
-/** Joman Wong
- * 
- * @author APCS2
- * most recent revision 10/20/16
- */
 public class Calculate {
 	//part 1
 	//squares the input
@@ -41,7 +36,7 @@ public class Calculate {
 	//converts improper fraction to mixed number
 	public static String toMixedNum(int a, int b){
 		if(a%b == 0){
-			return(a/b+"");
+			return(a/b+" ");
 		}else if (a < b){
 			return(a+"/"+b);
 		}
@@ -52,11 +47,7 @@ public class Calculate {
 		int y = b*d;
 		b = a*d + c*b;
 		a = a*c;
-		if (y > 0){
-			return(a + e + "^2 + " + b + e + " " + "+ " + y);
-		}else{
-			return (a + e + "^2 + " + b + e + " " + "– " + y*-1); // – vs - from fmy keyboard caused a problem with the
-		}														// testDoMath
+		return(a + e + "^2 + " + b + e + y);
 	}
 //end of part 1
 	//checks if one integer is evenly divisible by another
@@ -98,9 +89,9 @@ public class Calculate {
 	//returns the smaller of the two integers passed
 	public static int min (int a, int b){
 		if (a>b){
-			return(b);
+			return(a);
 		}else{
-			return a;
+			return b;
 		}
 	}
 	//rounds a double to 2 decimal places

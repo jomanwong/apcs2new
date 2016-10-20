@@ -168,7 +168,7 @@ public class Calculate {
         double root2 = round2((- b - sqrtOfDis)/(2*a));
         if( root1 == root2){
         	return String.valueOf(root1);
-        }else if(sqrt(discriminant(a, b, c)) <= 0){
+        }else if(sqrt(discriminant(a, b, c)) = 0){
             return "no real roots"; 
         }else{
             return Double.toString(root1) + " and " + Double.toString(root2);
