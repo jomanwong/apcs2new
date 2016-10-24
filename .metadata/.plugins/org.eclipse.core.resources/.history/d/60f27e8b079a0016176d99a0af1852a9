@@ -24,15 +24,11 @@ public class Magpie2 {
 				|| statement.indexOf("dryer") >= 0
 				|| statement.indexOf("hensley") >=0){
 			response = "Sounds like a good teacher.";
-		}else if(statement.indexOf("great") >= 0 
-				|| statement.indexOf("good") >= 0){
+		}else if(statement.indexOf("great") >= 0 || statement.indexOf("good") >= 0){
 			response = "Nice, good to know.";
-		}else if(statement.indexOf(" ") >= 0){
-			response = "Did you say something? I didn't hear you."
-					+ "";
-		}else if(statement.indexOf("hi") >=0 
-				|| statement.indexOf("hello") >= 0 
-				|| statement.indexOf("hey") >= 0){
+		}else if(statement.indexOf("this one time") >= 0){
+			response = "cool!";
+		}else if(statement.indexOf("hi") >=0 || statement.indexOf("hello") >= 0 || statement.indexOf("hey") >= 0){
 			response = "Hi, how are you doing?";
 		} else {
 			response = getRandomResponse();
