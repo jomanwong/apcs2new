@@ -28,23 +28,31 @@ public class Split
 		 * use String.split to split up the sandwich at the spaces, " ", and return what's in the middle of the sandwich and ignores what's on the outside
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		*/
-
-		String[] splittedString = splitAtBread("applespineapplesbreadlettustomatobaconmayohambreadcheese");
 		
-		for(String i: splittedString){
-			System.out.println(i);
+		String sandwich = "bread bread bread bread bread"; //designated place for easier location, could be simplified
+		String[] splittedString = splitAtBread(sandwich);
+		if(isOnlyBread(splittedString)){
+			System.out.println("is only bread");
 		}
-
 	}
-	public static String[] splitAtBread(String input){
+	
+	protected static String[] splitAtBread(String input){
 		String inputBackUp = input;
 		input = input.toLowerCase();
-		if(input.indexOf("bread") > 2){//more than 2 pieces of bread, more than a usual sandwich 
-			
-			
+		return input.split("bread"); //only 2 pieces of bread, or less.	
+	}
+	
+	protected static boolean isOnlyBread(){ //bread bread bread
+		int breadCount = 0;
+		for(String i: splittedString){
+			if(i.indexOf("bread") >= 0){
+				breadCount++;
+			}
+		}
+		if(breadCount == in.length){
+			return true;
 		}else{
-			input.split("bread"); //only 2 pieces of bread, or less.
-			return		
+			return false;
 		}
 	}
 }
