@@ -1,5 +1,5 @@
 import java.util.Arrays;
-/** latest version */
+
 public class Split {
 
 	public static void main(String[] args){
@@ -42,7 +42,7 @@ public class Split {
 		input = input.toLowerCase();
 		input = input + " "; //this part is important, adds a space to the end, so it it iwll still have 3 parts if ended on 2nd bread
 		input.split("bread"); //only 2 pieces of bread, or less, input is array now
-		if(input.length == 3){ //only 3 parts if it is 2 bread
+		if(splittedString.length == 3){ //only 3 parts if it is 2 bread
 			input = input[1];
 		}
 		return Arrays.toString(input);
