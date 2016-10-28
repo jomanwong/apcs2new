@@ -29,21 +29,21 @@ public class Split {
 		 * Again, what if it's a fancy sandwich with multiple pieces of bread?
 		 */
 
-		String sandwich1 = "applespineapplesbreadlettustomatobaconmayohambread"; //designated place for easier location, could be simplified
+		String sandwich = "applespineapplesbreadlettustomatobaconmayohambread"; //designated place for easier location, could be simplified
 		/** make into method, the following */
 		/*if(isOnlyBread(splittedString)){
 			System.out.println("Is only bread, you sure it's not a loaf of bread?");
 		}*/
-		splitAtBread(sandwich1);
+		splitAtBread(sandwich);
 	}
 
 	public static String splitAtBread(String input){
 		String inputBackUp = input;
 		input = input.toLowerCase();
-		input = input + " "; //this part is important, adds a space to the end, so it will still have 3 parts if ended on 2nd bread
-		String[] output = input.split("bread"); //only 2 pieces of bread, or less, input is array now
+		input = input + " "; //this part is important, adds a space to the end, so it it iwll still have 3 parts if ended on 2nd bread
+		input.split("bread"); //only 2 pieces of bread, or less, input is array now
 		if(input.length() == 3){ //only 3 parts if it is 2 bread
-			return (Arrays.toString(output));
+			return input[1];
 		}
 	}
 

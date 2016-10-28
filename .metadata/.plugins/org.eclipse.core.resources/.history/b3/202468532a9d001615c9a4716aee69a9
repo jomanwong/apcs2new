@@ -34,18 +34,17 @@ public class Split {
 		/*if(isOnlyBread(splittedString)){
 			System.out.println("Is only bread, you sure it's not a loaf of bread?");
 		}*/
-		splitAtBread(sandwich1);
+		//splitAtBread(sandwich1);
+		String inputBackUp = sandwich1;
+		sandwich1 = sandwich1.toLowerCase();
+		sandwich1 = sandwich1 + " "; //this part is important, adds a space to the end, so it will still have 3 parts if ended on 2nd bread
+		 //only 2 pieces of bread, or less, input is array now
+		System.out.println(Arrays.toString(sandwich1.split("bread")));
 	}
 
-	public static String splitAtBread(String input){
-		String inputBackUp = input;
-		input = input.toLowerCase();
-		input = input + " "; //this part is important, adds a space to the end, so it will still have 3 parts if ended on 2nd bread
-		String[] output = input.split("bread"); //only 2 pieces of bread, or less, input is array now
-		if(input.length() == 3){ //only 3 parts if it is 2 bread
-			return (Arrays.toString(output));
-		}
-	}
+	/*public static String[] splitAtBread(String input){
+		
+	}*/
 
 	public static boolean isOnlyBread(String[] in){ //bread bread bread
 		int breadCount = 0;
