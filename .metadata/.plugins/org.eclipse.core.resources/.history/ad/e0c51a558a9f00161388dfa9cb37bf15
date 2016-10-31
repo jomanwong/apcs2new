@@ -28,7 +28,7 @@ public class Magpie3 {
 		}else if (findKeyword("she is my mother", "mother", 0) >= 0
 				|| findKeyword("he is my father", "father", 0) >= 0
 				|| findKeyword("she is my sister", "sister", 0) >= 0
-				|| findKeyword("he is my brother", "brother") >= 0) {
+				|| findKeyword("he is my brother", "brother", 0) >= 0) {
 			response = "Tell me more about your family.";
 		}else if(findKeyword("mr. lathem is my apes teacher", "lathem", 0) >= 0
 				|| findKeyword("ms. dryer is my apcs teacher", "dryer", 0) >= 0

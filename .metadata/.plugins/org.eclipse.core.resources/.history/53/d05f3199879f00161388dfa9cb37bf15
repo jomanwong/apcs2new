@@ -16,7 +16,6 @@ public class StringExplorer {
 		// Try other methods here:
 		int notFoundPsn = sample.indexOf("slow");
 		System.out.println("sample.indexOf(\"slow\") = " + notFoundPsn);
-		System.out.println("sample.indexof(String str, int fromIndex) looks for str from the index of fromIndex.");
 	}
 
 }

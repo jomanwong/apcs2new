@@ -27,7 +27,7 @@ public class Magpie2 {
 		}else if(statement.indexOf("great") >= 0 
 				|| statement.indexOf("good") >= 0){
 			response = "Nice, good to know.";
-		}else if(statement.indexOf("") >= 0){
+		}else if(statement.length = 0){
 			response = "Did you say something? I didn't hear you.";
 		}else if(statement.indexOf("hi") >=0 
 				|| statement.indexOf("hello") >= 0 
