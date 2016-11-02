@@ -39,6 +39,8 @@ public class Split {
 	 * 11/1/16 9:26 p.m.
 	 */
 	}
+	
+	public static 
 
 	public static String splitAtBread(String input){
 		if(input.length() < 5){ // no nothing
