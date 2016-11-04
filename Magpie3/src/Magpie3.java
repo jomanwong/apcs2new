@@ -4,16 +4,6 @@ public class Magpie3 {
 	public String getGreeting() {
 		return "Hello, let's talk.";
 	}
-	
-	/*
-	 * 2) Then *change* getResponse to use .findKeyword(String statement,String keyword) instead of .indexOf(String keyword)	 
-	 *  
-	 * 3) Copy and paste the 2 new noncommittal responses you wrote in part 2 into getRandomResponse();
-	 * 
-	 * 4) Use the code to complete the tracing in the handout.
-	 * 
-	 */
-
 	/**
 	 * Gives a response to a user statement
 	 * takes in user statement
@@ -23,25 +13,25 @@ public class Magpie3 {
 	
 	public String getResponse(String statement) {
 		String response = "";
-		if (findKeyword("i think not", "not", 0) >= 0) {
+		if (findKeyword("i think not", statement, 0) >= 0){
 			response = "Why not?";
-		}else if (findKeyword("she is my mother", "mother", 0) >= 0
-				|| findKeyword("he is my father", "father", 0) >= 0
-				|| findKeyword("she is my sister", "sister", 0) >= 0
-				|| findKeyword("he is my brother", "brother") >= 0) {
+		}else if (findKeyword("she is my mother", statement, 0) >= 0
+				|| findKeyword("he is my father", statement, 0) >= 0
+				|| findKeyword("she is my sister", statement, 0) >= 0
+				|| findKeyword("he is my brother", statement) >= 0) {
 			response = "Tell me more about your family.";
-		}else if(findKeyword("mr. lathem is my apes teacher", "lathem", 0) >= 0
-				|| findKeyword("ms. dryer is my apcs teacher", "dryer", 0) >= 0
-				|| findKeyword("mr. hensley is my endlish teacher", "hensley", 0) >=0){
+		}else if(findKeyword("mr. lathem is my apes teacher", statement, 0) >= 0
+				|| findKeyword("ms. dryer is my apcs teacher", statement, 0) >= 0
+				|| findKeyword("mr. hensley is my endlish teacher", statement, 0) >=0){
 			response = "Sounds like a good teacher.";
-		}else if(findKeyword("i'm great", "great", 0) >= 0 
-				|| findKeyword("i am doing good", "good", 0) >= 0){
+		}else if(findKeyword("i'm great", statement, 0) >= 0 
+				|| findKeyword("i am doing good", statement, 0) >= 0){
 			response = "Nice, good to know.";
 		}else if(statement.length() == 0){
 			response = "Did you say something? I didn't hear you.";
-		}else if(findKeyword("hi", "hi", 0) >=0
-				|| findKeyword("hello", "hello", 0) >= 0 
-				|| findKeyword("hey there", "hey", 0) >= 0){
+		}else if(findKeyword("hi", statement, 0) >=0
+				|| findKeyword("hello", statement, 0) >= 0 
+				|| findKeyword("hey there", statement, 0) >= 0){
 			response = "Hi, how are you doing?";
 		} else {
 			response = getRandomResponse();
@@ -117,9 +107,28 @@ public class Magpie3 {
 	 * returns a non-committal string
 	 */
 	private String getRandomResponse() {
-		
-		// Paste part 2 code here	
-		
+		final int NUMBER_OF_RESPONSES = 7;
+		double r = Math.random();
+		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+		String response = "";
+
+		if (whichResponse == 0) {
+			response = "Interesting, tell me more.";
+		} else if (whichResponse == 1) {
+			response = "Hmmm.";
+		} else if (whichResponse == 2) {
+			response = "Do you really think so?";
+		} else if (whichResponse == 3) {
+			response = "You don't say.";
+		}else if (whichResponse == 4){
+			response = "Do you wanna try something new?";
+		}else if(whichResponse == 5){
+			response = "hahaha";
+		}else if(whichResponse == 6){
+			response = "What do you do all day, talking to programs?";
+		}
+
+		return response;
 	}
 
 }
