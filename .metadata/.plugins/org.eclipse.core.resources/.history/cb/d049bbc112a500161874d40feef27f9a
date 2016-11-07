@@ -1,16 +1,27 @@
-public class Magpie3 {
-
+public class Magpie4 {
+	
 	//Get a default greeting and return a greeting
 	public String getGreeting() {
 		return "Hello, let's talk.";
 	}
+
+
+	/*
+	 * 1) Copy and paste the code you wrote in Magpie 3 into the getResponse method. There is new code within the method 
+	 * but below where you will paste your code.  Figure out what it does.
+	 * 
+	 * 2) Copy and paste Part 3's getRandomResponse() code into the method below.
+	 * 
+	 * 3) Alter the class as described in the handout.
+	 * 
+	 */
+	
+	
 	/**
 	 * Gives a response to a user statement
 	 * takes in user statement
 	 * response based on the rules given
 	 */
-	
-	
 	public String getResponse(String statement) {
 		String response = "";
 		if (findKeyword("i think not", statement, 0) >= 0){
@@ -27,16 +38,70 @@ public class Magpie3 {
 		}else if(findKeyword("i'm great", statement, 0) >= 0 
 				|| findKeyword("i am doing good", statement, 0) >= 0){
 			response = "Nice, good to know.";
-		}else if(statement.length() <= 0){
+		}else if(statement.length() == 0){
 			response = "Did you say something? I didn't hear you.";
 		}else if(findKeyword("hi", statement, 0) >=0
 				|| findKeyword("hello", statement, 0) >= 0 
 				|| findKeyword("hey there", statement, 0) >= 0){
 			response = "Hi, how are you doing?";
-		} else {
-			response = getRandomResponse();
+		}else if (findKeyword(statement, "I want to", 0) >= 0) { // Responses which require transformations \/\/\/
+			response = transformIWantToStatement(statement);
+		}else {
+			// Look for a two word (you <something> me)
+			// pattern
+			int psn = findKeyword(statement, "you", 0);
+
+			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0) {
+				response = transformYouMeStatement(statement);
+			} else {
+				response = getRandomResponse();
+			}
 		}
 		return response;
+	}
+
+	/**
+	 * Take a statement with "i want to <something>." and transform it into
+	 * "What would it mean to <something>?"
+	 * 
+	 * @param statement
+	 *            the user statement, assumed to contain "i want to"
+	 * @return the transformed statement
+	 */
+	private String transformIWantToStatement(String statement) {
+		// Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length() - 1);
+		if (lastChar.equals(".")) {
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		int psn = findKeyword(statement, "i want to", 0);
+		String restOfStatement = statement.substring(psn + 9).trim();
+		return "what would it mean to " + restOfStatement + "?";
+	}
+
+	/**
+	 * Take a statement with "you <something> me" and transform it into
+	 * "What makes you think that I <something> you?"
+	 * 
+	 * @param statement
+	 *            the user statement, assumed to contain "you" followed by "me"
+	 * @return the transformed statement
+	 */
+	private String transformYouMeStatement(String statement) {
+		// Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement.length() - 1);
+		if (lastChar.equals(".")) {
+			statement = statement.substring(0, statement.length() - 1);
+		}
+
+		int psnOfYou = findKeyword(statement, "you", 0);
+		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
+
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe)
+				.trim();
+		return "What makes you think that I " + restOfStatement + " you?";
 	}
 
 	/**
@@ -55,15 +120,12 @@ public class Magpie3 {
 	 */
 	private int findKeyword(String statement, String goal, int startPos) {
 		String phrase = statement.trim();
-		// The only change to incorporate the startPos is in
-		// the line below
+		// The only change to incorporate the startPos is in the line below
 		int psn = phrase.toLowerCase().indexOf(goal.toLowerCase(), startPos);
 
-		// Refinement--make sure the goal isn't part of a
-		// word
+		// Refinement--make sure the goal isn't part of a word
 		while (psn >= 0) {
-			// Find the string of length 1 before and after
-			// the word
+			// Find the string of length 1 before and after the word
 			String before = " ", after = " ";
 			if (psn > 0) {
 				before = phrase.substring(psn - 1, psn).toLowerCase();
@@ -73,14 +135,12 @@ public class Magpie3 {
 						psn + goal.length() + 1).toLowerCase();
 			}
 
-			// If before and after aren't letters, we've
-			// found the word
+			// If before and after aren't letters, we've found the word
 			if (before.equals(" ") && after.equals(" ")) {
 				return psn;
 			}
-
-			// The last position didn't work, so let's find
-			// the next, if there is one.
+			// The last position didn't work, so let's find the next, if there
+			// is one.
 			psn = phrase.indexOf(goal.toLowerCase(), psn + 1);
 
 		}
@@ -104,7 +164,8 @@ public class Magpie3 {
 
 	/**
 	 * Pick a default response to use if nothing else fits.
-	 * returns a non-committal string
+	 * 
+	 * @return a non-committal string
 	 */
 	private String getRandomResponse() {
 		final int NUMBER_OF_RESPONSES = 7;
@@ -128,7 +189,7 @@ public class Magpie3 {
 			response = "What do you do all day, talking to programs?";
 		}
 
-		return response;
+		return response;	
 	}
 
 }
