@@ -1,0 +1,7 @@
+package exercise;
+
+public class DrumKit {
+	public static void main(String[]args){
+		DrumKit d = new DrumKit();
+	}
+}
