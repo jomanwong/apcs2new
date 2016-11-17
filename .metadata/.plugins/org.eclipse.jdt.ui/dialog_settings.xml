@@ -10,15 +10,18 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="FatJarPackageWizard">
-		<item value="C:\Users\APCS2\Desktop\jomanw-apcs2" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="Fahrenheit_to_Celsius - Temp_Convert" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="C:\Users\APCS2\Desktop\jomanw-apcs2\Fahrenheit_to_Celsius.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="C:\Users\APCS2\Desktop\jomanw-apcs2.xml" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="MagpieRunner4 - Magpie4" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="E:\New WorkSpace - USE THIS FOR ECLIPSE\apcs2new\Magpie4.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="E:\New WorkSpace - USE THIS FOR ECLIPSE\apcs2new\Magpie4.jar"/>
+			<item value="E:\New WorkSpace - USE THIS FOR ECLIPSE\apcs2new\Fahrenheit_to_Celsius.jar"/>
 			<item value="C:\Users\APCS2\Desktop\jomanw-apcs2\Fahrenheit_to_Celsius.jar"/>
 		</list>
 		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="C:\Users\APCS2\Desktop\jomanw-apcs2.xml"/>
 			<item value=".xml"/>
 		</list>
 	</section>
