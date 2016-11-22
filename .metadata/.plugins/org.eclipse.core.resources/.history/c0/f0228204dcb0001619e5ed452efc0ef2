@@ -30,11 +30,6 @@ public class Split {
 		 */
 
 		String sandwich1 = "appletomatohamcheese"; //designated place for easier location, could be simplified
-		String sandwich2 = "";
-		String sandwich3 = "";
-		String sandwich4 = "";
-		String sandwich5 = "";
-		String sandwich6 = "";
 		/** make into method, the following */
 		System.out.println(splitAtBread(sandwich1));
 	}
