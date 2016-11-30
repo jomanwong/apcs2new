@@ -8,8 +8,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\APCS2\Desktop\Magpie4"/>
 			<item value="C:\Users\Joman\Desktop\Magpie4"/>
+			<item value="C:\Users\Joman\Desktop\arrays_lab_3_basic_skills_1dim"/>
+			<item value="C:\Users\APCS2\Desktop\Magpie4"/>
 			<item value="C:\Users\APCS2\Downloads\magpie4"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
