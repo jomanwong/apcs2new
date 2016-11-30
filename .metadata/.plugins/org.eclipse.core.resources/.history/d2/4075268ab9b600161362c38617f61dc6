@@ -1,14 +1,6 @@
-/**
- * @author
- * Joman Wong
- * 
- * 11/29/16
- * 
- */
 package arrays_materials;
 
 import java.util.Arrays;
-
 
 public class ArraysLab3{
 	/*
@@ -38,9 +30,7 @@ public class ArraysLab3{
 	public static int[] append(int[] arr, int num){
 		assert (arr.length > 0);
 		int[] returnArr = new int[arr.length+1];
-		for(int i = 0; i < returnArr.length - 1; i++){
-			returnArr[i] = arr[i];
-		}
+		returnArr = arr;
 		returnArr[returnArr.length-1] = num;
 		return returnArr;
 	}
@@ -53,9 +43,7 @@ public class ArraysLab3{
 	 */
 	public static int[] remove(int[] arr, int idx){
 		assert (arr.length >= 2);
-		int[] returnArr = new int [arr.length-1];
-		returnArr = Array.remove(arr, idx); //need help here
-		return returnArr;
+		
 	}
 	
 	/*
@@ -65,13 +53,7 @@ public class ArraysLab3{
 	 */
 	public static int sumEven(int[] arr){
 		assert (arr.length > 0);
-		int returnInt = 0;
-		for(int i = 0; i <= arr.length - 1 ; i ++){
-			if(i % 2 == 0){
-				returnInt += arr[i];
-			}
-		}
-		return returnInt;
+		
 	}
 	
 	/*
@@ -83,11 +65,7 @@ public class ArraysLab3{
 	 */
 	public static void rotateRight(int[] arr){
 		assert (arr.length > 0);
-		int temp = arr[arr.length - 1];
-		for(int i = arr.length - 2; i >= 0 ; i --){
-			arr[i+1] = arr[i];
-		}
-		arr[0] = temp;
+		
 	}
 
 	/*
@@ -114,19 +92,6 @@ public class ArraysLab3{
 	 */
 	
 	public static void main(String[] args){
-		int[] a1 = {5, 10, 15, 20, 25, 30, 35, 40};
-		int[] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
-		int[] sumArr = sum(a1, a2);
-		int appendNum = 200;
-		int[] appendArr = append(a1, appendNum);
-		int removeIdx = 5;
-		int[] removeArr = remove(a2, removeIdx);
-		int sumOfEvens =sumEven(appendArr);
-		rotateRight(a1);
-		System.out.println("sumArr: " + Arrays.toString(sumArr));
-		System.out.println("appendArr: " + Arrays.toString(appendArr));
-		System.out.println("removeArr: " + Arrays.toString(removeArr));
-		System.out.println("sumOfEvens: " + sumOfEvens);
-		System.out.println("a1: " + Arrays.toString(a1));
+		
 	}
 }

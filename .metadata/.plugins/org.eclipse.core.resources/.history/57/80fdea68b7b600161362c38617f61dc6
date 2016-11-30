@@ -1,31 +1,20 @@
-/**
- * @author
- * Joman Wong
- * 
- * 11/29/16
- * 
- */
 package arrays_materials;
 
 import java.util.Arrays;
 
-
-public class ArraysLab3{
+public class ArraysLab3 
+{
 	/*
 	 * Write a method named sum that accepts two arrays of integers arr1 and arr2 
 	 * and returns an array of integers, 
 	 * in which every element is the sum of the elements at that index for the arrays arr1 and arr2. 
 	 * You can assume arrays arr1 and arr2 have at least one element each and are the same length.
 	 */
-	public static int[] sum(int[] arr1, int[] arr2){
+	public static int[] sum(int[] arr1, int[] arr2)
+	{
 		assert (arr1.length > 0);
 		assert (arr2.length > 0);
 		assert (arr1.length == arr2.length);
-		int[] returnArr = new int[arr2.length];
-		for(int i = 0; i <= arr1.length - 1 ; i ++){
-			returnArr[i] = arr1[i] + arr2[i];
-		}
-		return returnArr;
 		
 	}
 	
@@ -35,14 +24,10 @@ public class ArraysLab3{
 	 * that consists of the elements of arr with num appended to the end.  
 	 * You can assume array arr has at least one element.
 	 */
-	public static int[] append(int[] arr, int num){
+	public static int[] append(int[] arr, int num)
+	{
 		assert (arr.length > 0);
-		int[] returnArr = new int[arr.length+1];
-		for(int i = 0; i < returnArr.length - 1; i++){
-			returnArr[i] = arr[i];
-		}
-		returnArr[returnArr.length-1] = num;
-		return returnArr;
+		
 	}
 	
 	/*
@@ -51,11 +36,10 @@ public class ArraysLab3{
 	 * except for the element at index idx (thus, the returned array has a length of arr.length – 1).  
 	 * You can assume arr has at least two elements.
 	 */
-	public static int[] remove(int[] arr, int idx){
+	public static int[] remove(int[] arr, int idx)
+	{
 		assert (arr.length >= 2);
-		int[] returnArr = new int [arr.length-1];
-		returnArr = Array.remove(arr, idx); //need help here
-		return returnArr;
+		
 	}
 	
 	/*
@@ -63,15 +47,10 @@ public class ArraysLab3{
 	 * and returns an integer containing the sum of the elements at the even indices of arr.  
 	 * (That means elements at indices 0,2,4,6,8.)  You can assume arr has at least one element.
 	 */
-	public static int sumEven(int[] arr){
+	public static int sumEven(int[] arr)
+	{
 		assert (arr.length > 0);
-		int returnInt = 0;
-		for(int i = 0; i <= arr.length - 1 ; i ++){
-			if(i % 2 == 0){
-				returnInt += arr[i];
-			}
-		}
-		return returnInt;
+		
 	}
 	
 	/*
@@ -81,13 +60,10 @@ public class ArraysLab3{
 	 * (element 0 goes to element 1, element 1 goes to element 2, …, element n-1 goes to element 0).  
 	 * You can assume arr has at least one element.
 	 */
-	public static void rotateRight(int[] arr){
+	public static void rotateRight(int[] arr)
+	{
 		assert (arr.length > 0);
-		int temp = arr[arr.length - 1];
-		for(int i = arr.length - 2; i >= 0 ; i --){
-			arr[i+1] = arr[i];
-		}
-		arr[0] = temp;
+		
 	}
 
 	/*
@@ -113,20 +89,8 @@ public class ArraysLab3{
 				a1
 	 */
 	
-	public static void main(String[] args){
-		int[] a1 = {5, 10, 15, 20, 25, 30, 35, 40};
-		int[] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
-		int[] sumArr = sum(a1, a2);
-		int appendNum = 200;
-		int[] appendArr = append(a1, appendNum);
-		int removeIdx = 5;
-		int[] removeArr = remove(a2, removeIdx);
-		int sumOfEvens =sumEven(appendArr);
-		rotateRight(a1);
-		System.out.println("sumArr: " + Arrays.toString(sumArr));
-		System.out.println("appendArr: " + Arrays.toString(appendArr));
-		System.out.println("removeArr: " + Arrays.toString(removeArr));
-		System.out.println("sumOfEvens: " + sumOfEvens);
-		System.out.println("a1: " + Arrays.toString(a1));
+	public static void main(String[] args) 
+	{
+		
 	}
 }

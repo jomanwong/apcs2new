@@ -21,7 +21,6 @@ public class ArraysLab3Test
 		                         expectedResult, result);
 		System.out.println("Unit test testSum passed.");
 	}
-	
 
 	@Test
 	public void testAppend() 
