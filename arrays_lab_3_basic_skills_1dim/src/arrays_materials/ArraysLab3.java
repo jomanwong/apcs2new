@@ -54,7 +54,12 @@ public class ArraysLab3{
 	public static int[] remove(int[] arr, int idx){
 		assert (arr.length >= 2);
 		int[] returnArr = new int [arr.length-1];
-		returnArr = Array.remove(arr, idx); //need help here
+		for(int i = 0; i < idx; i ++){
+			returnArr[i] = arr[i];
+		}
+		for(int k = idx; k < arr.length-1; k ++){
+			returnArr[k] = arr [k+1];
+		}
 		return returnArr;
 	}
 	
