@@ -6,6 +6,7 @@
 
 package fracCalc;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FracCalc {
@@ -13,11 +14,11 @@ public class FracCalc {
     public static void main(String[] args){
     	// TODO: Read the input from the user and call produceAnswer with an equation
     	Scanner in = new Scanner (System.in);
-    	String userInput = in.nextLine().toLowerCase();
+    	String userInput = in.nextLine();
     	while(!userInput.equals("quit")){                 //keeps prompting until quit
     		System.out.println(produceAnswer(userInput)); 
-    		userInput = in.nextLine().toLowerCase();
     	}
+    	//System.out.println(produceAnswer("5_3/4 + 6_5/8"));
     }
   
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -30,22 +31,41 @@ public class FracCalc {
     //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String input){ 
         // TODO: Implement this function to produce the solution to the input
-    	String operator; //stores what operator is in equation, if any. For later use in calculation, 
-    					 //if statement test, as if(operator.equals(" * ") or " / "&& and 1st operand or 2nd .equals 0, returns 0)
-    				     //but for division if divide by 0, returns "ERROR"
+    	//stores what operator is in equation, if any. For later use in calculation, 
+    	//if statement test, as if(operator.equals(" * ") or " / "&& and 1st operand or 2nd .equals 0, returns 0)
+        //but for division if divide by 0, returns "ERROR"
+    	String firstOperand;
+    	String secondOperand;
+    	String operator;
+    	//int operatorLocation;
     	if(input.indexOf(" + ") != -1){ //finds if the operator is +
+    		//inputNoSpace = input.replaceAll("\\s+",""); //no whitespaces
+    		String[] inputArr = input.split(" ");
+        	firstOperand = inputArr[0].toString();
+        	secondOperand = inputArr[2].toString();
         	operator = " + ";
+        	return secondOperand;
         }else if(input.indexOf(" - ") != -1){ //finds if the operator is -
+        	String[] inputArr = input.split(" ");
+        	firstOperand = inputArr[0].toString();
+        	secondOperand = inputArr[2].toString();
         	operator = " - ";
+        	return inputArr[2];
         }else if(input.indexOf(" * ") != -1){ //finds if the operator is *
+        	String[] inputArr = input.split(" ");
+        	firstOperand = inputArr[0].toString();
+        	secondOperand = inputArr[2].toString();
         	operator = " * ";
+        	return secondOperand;
         }else if(input.indexOf(" / ") != -1){ //finds if the operator is /
+        	String[] inputArr = input.split(" ");
+        	firstOperand = inputArr[0].toString();
+        	secondOperand = inputArr[2].toString();
         	operator = " / ";
+        	return secondOperand;
         }else{
         	return "ERROR";
         }
-    	
-        return "";
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
