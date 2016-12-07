@@ -1,7 +1,7 @@
 /**
  * 
  * @author Joman Wong
- * @latest edit 12/6/2016 10:42 PM
+ * @latest edit 12/5/2016 9:42 PM
  */
 
 package fracCalc;
@@ -59,7 +59,7 @@ public class FracCalc {
         	whole = parseOperand(secondOperand)[0].toString();
         	numerator = parseOperand(secondOperand)[1].toString();
         	denominator = parseOperand(secondOperand)[2].toString();
-        	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+        	return "whole:" + whole + " numerator:" + numerator + "denominator:" + denominator; //
         }else if(input.indexOf(" - ") != -1){ //finds if the operator is -
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
@@ -68,7 +68,7 @@ public class FracCalc {
         	whole = parseOperand(secondOperand)[0].toString();
         	numerator = parseOperand(secondOperand)[1].toString();
         	denominator = parseOperand(secondOperand)[2].toString();
-        	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+        	return "whole:" + whole + " numerator:" + numerator + "denominator:" + denominator;
         }else if(input.indexOf(" * ") != -1){ //finds if the operator is *
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
@@ -77,7 +77,7 @@ public class FracCalc {
         	whole = parseOperand(secondOperand)[0].toString();
         	numerator = parseOperand(secondOperand)[1].toString();
         	denominator = parseOperand(secondOperand)[2].toString();
-        	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+        	return "whole:" + whole + " numerator:" + numerator + "denominator:" + denominator;
         }else if(input.indexOf(" / ") != -1){ //finds if the operator is /
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
@@ -86,7 +86,7 @@ public class FracCalc {
         	whole = parseOperand(secondOperand)[0].toString();
         	numerator = parseOperand(secondOperand)[1].toString();
         	denominator = parseOperand(secondOperand)[2].toString();
-        	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+        	return "whole:" + whole + " numerator:" + numerator + "denominator:" + denominator;
         }else{
         	return "ERROR";
         }
@@ -102,9 +102,9 @@ public class FracCalc {
     	int indexOfSlash = in.indexOf("/");
     	String[] arrToReturn = new String[3]; //empty array of length 3, set [0] to whole, [1] to numer, [2] to denom, return this arr
     	String wholeNum = in.split("_")[0]; //ex. if in = 5_3/4, this is [5,3/4]
-    	String numerator = in.substring(indexOfSlash-1, indexOfSlash); //ex. in in = 5_3/4, this is []
+    	String numerator = in.substring(indexOfSlash, indexOfSlash + 1); //ex. in in = 5_3/4, this is []
     	String denominator = in.split("/")[1]; //ex. if in = 5_3/4, this is [5_3,4]
-    	arrToReturn[0] = wholeNum;  //fix exception -3/7 - 20
+    	arrToReturn[0] = wholeNum;
     	arrToReturn[1] = numerator;
     	arrToReturn[2] = denominator;
     	return arrToReturn;
