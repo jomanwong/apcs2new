@@ -97,33 +97,16 @@ public class FracCalc {
     	
     }*/
     
-    public static int[] parseOperand(String in){
+    public static String[] parseOperand(String in){
     	//String instance = in;
-    	
-    	//XXX VARS HERE XXX
-    	String wholeNum;
-    	String denominator;
-    	String numerator = in.substring(indexOfSlash-1, indexOfSlash); //ex. in in = 5_3/4, this is []
-
     	int indexOfSlash = in.indexOf("/");
-    	int[] arrToReturn = new int[3]; //empty array of length 3, set [0] to whole, [1] to numer, [2] to denom, return this arr
-    	
-    	
-    	if(in.indexOf("_") != -1){
-    		wholeNum = in.split("_")[0]; //ex. if in = 5_3/4, this is [5,3/4]
-    	}else{
-    		wholeNum = "0";
-    	}
-    	
-    	if(in.indexOf("/") != -1){
-    		denominator = in.split("/")[1]; //ex. if in = 5_3/4, this is [5_3,4]
-    	}else{
-    		denominator = "1";
-    	}	
-
-    	arrToReturn[0] = Integer.parseInt(wholeNum);
-    	arrToReturn[1] = Integer.parseInt(numerator);
-    	arrToReturn[2] = Integer.parseInt(denominator);
+    	String[] arrToReturn = new String[3]; //empty array of length 3, set [0] to whole, [1] to numer, [2] to denom, return this arr
+    	String wholeNum = in.split("_")[0]; //ex. if in = 5_3/4, this is [5,3/4]
+    	String numerator = in.substring(indexOfSlash-1, indexOfSlash); //ex. in in = 5_3/4, this is []
+    	String denominator = in.split("/")[1]; //ex. if in = 5_3/4, this is [5_3,4]
+    	arrToReturn[0] = wholeNum;  //fix exception -3/7 - 20
+    	arrToReturn[1] = numerator;
+    	arrToReturn[2] = denominator;
     	return arrToReturn;
     }
 }
