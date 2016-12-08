@@ -9,7 +9,7 @@ package fracCalc;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class FracCalc {
+public class FracCalc{
 
     public static void main(String[] args){
     	// TODO: Read the input from the user and call produceAnswer with an equation
@@ -41,9 +41,9 @@ public class FracCalc {
     	String firstOperand;
     	String secondOperand;
     	String operator;
-    	String whole;
-    	String numerator;
-    	String denominator;
+    	int whole;
+    	int numerator;
+    	int denominator;
     	//String[] temp; // temporary array
     	//String[] firstOperand = parseOperand(parseInput(input)[0].toString());
     	//String[] secondOperand = parseOperand(parseInput(input)[1].toString());
@@ -56,36 +56,36 @@ public class FracCalc {
         	firstOperand = inputArr[0].toString();
         	secondOperand = inputArr[2].toString();
         	operator = " + ";
-        	whole = parseOperand(secondOperand)[0].toString();
-        	numerator = parseOperand(secondOperand)[1].toString();
-        	denominator = parseOperand(secondOperand)[2].toString();
+        	whole = parseOperand(secondOperand)[0];
+        	numerator = parseOperand(secondOperand)[1];
+        	denominator = parseOperand(secondOperand)[2];
         	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
         }else if(input.indexOf(" - ") != -1){ //finds if the operator is -
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
         	secondOperand = inputArr[2].toString();
         	operator = " - ";
-        	whole = parseOperand(secondOperand)[0].toString();
-        	numerator = parseOperand(secondOperand)[1].toString();
-        	denominator = parseOperand(secondOperand)[2].toString();
+        	whole = parseOperand(secondOperand)[0];
+        	numerator = parseOperand(secondOperand)[1];
+        	denominator = parseOperand(secondOperand)[2];
         	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
         }else if(input.indexOf(" * ") != -1){ //finds if the operator is *
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
         	secondOperand = inputArr[2].toString();
         	operator = " * ";
-        	whole = parseOperand(secondOperand)[0].toString();
-        	numerator = parseOperand(secondOperand)[1].toString();
-        	denominator = parseOperand(secondOperand)[2].toString();
+        	whole = parseOperand(secondOperand)[0];
+        	numerator = parseOperand(secondOperand)[1];
+        	denominator = parseOperand(secondOperand)[2];
         	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
         }else if(input.indexOf(" / ") != -1){ //finds if the operator is /
         	String[] inputArr = input.split(" ");
         	firstOperand = inputArr[0].toString();
         	secondOperand = inputArr[2].toString();
         	operator = " / ";
-        	whole = parseOperand(secondOperand)[0].toString();
-        	numerator = parseOperand(secondOperand)[1].toString();
-        	denominator = parseOperand(secondOperand)[2].toString();
+        	whole = parseOperand(secondOperand)[0];
+        	numerator = parseOperand(secondOperand)[1];
+        	denominator = parseOperand(secondOperand)[2];
         	return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
         }else{
         	return "ERROR";
@@ -103,22 +103,22 @@ public class FracCalc {
     	//XXX VARS HERE XXX
     	String wholeNum;
     	String denominator;
+    	int indexOfSlash = in.indexOf("/");
     	String numerator = in.substring(indexOfSlash-1, indexOfSlash); //ex. in in = 5_3/4, this is []
 
-    	int indexOfSlash = in.indexOf("/");
     	int[] arrToReturn = new int[3]; //empty array of length 3, set [0] to whole, [1] to numer, [2] to denom, return this arr
     	
     	
     	if(in.indexOf("_") != -1){
     		wholeNum = in.split("_")[0]; //ex. if in = 5_3/4, this is [5,3/4]
     	}else{
-    		wholeNum = "0";
+    		wholeNum = "0"; //if the operand has no whole number (5/4)
     	}
     	
     	if(in.indexOf("/") != -1){
-    		denominator = in.split("/")[1]; //ex. if in = 5_3/4, this is [5_3,4]
+    		denominator = in.split("/")[1]; //ex. if in = 5_3/4, this is [5_3,(4)]
     	}else{
-    		denominator = "1";
+    		denominator = "1"; //if the operand has no fractions (21)
     	}	
 
     	arrToReturn[0] = Integer.parseInt(wholeNum);
