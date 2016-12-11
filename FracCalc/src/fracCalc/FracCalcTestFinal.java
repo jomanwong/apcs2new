@@ -5,8 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 //Final fraccalc submission tests
-public class FracCalcTestFinal
-{
+public class FracCalcTestFinal{
     @Test public void testAdditionSimple1() {assertEquals("2/5", FracCalc.produceAnswer("1/5 + 1/5"));}
     @Test public void testAdditionSimple2() {assertEquals("4/5", FracCalc.produceAnswer("3/5 + 1/5"));}
     @Test public void testAdditionSimple3() {assertEquals("4_3/7", FracCalc.produceAnswer("1_1/7 + 3_2/7"));}
