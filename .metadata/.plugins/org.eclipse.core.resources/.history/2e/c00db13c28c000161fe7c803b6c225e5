@@ -1,7 +1,7 @@
 /**
  * 
  * @author Joman Wong
- * @latest edit 12/10/2016 3:42 PM
+ * @latest edit 12/9/2016 10:42 PM
  * 
  */
 
@@ -20,6 +20,7 @@ public class FracCalc{
 		//System.out.println("Test: " + test);
 		while(!userInput.equals("quit")){                 //keeps prompting until quit
 			System.out.println(produceAnswer(userInput));
+			//System.out.println(gcf(produceAnswer(userInput)));
 			userInput = in.nextLine();
 		}
 		//System.out.println(produceAnswer("5_3/4 + 6_5/8"));
@@ -40,11 +41,13 @@ public class FracCalc{
 		//but for division if divide by 0, returns "ERROR"
 
 		//XXX Variables here XXX
+		String returnThis;
 		//String[] in.split(" ");
 		String firstOperand = parseInput(input)[0];
 		String operator = parseInput(input)[1]; //determines what calculate function to run
 		String secondOperand = parseInput(input)[2];
 		int[] ANS = new int[3]; //it is to shorten the return command line, replaces "XFrac(firstOperandAsInt, secondOperandAsInt)"
+		int[] temp = new int[3];
 		//String toReturn;
 		//String operator;
 
@@ -67,19 +70,24 @@ public class FracCalc{
 		//call calculations here
 		if(operator.equals("+")){ //finds if the operator is +
 			ANS = addFrac(firstOperandAsInt, secondOperandAsInt);
-			return ANS[0] + "_" + ANS[1] + "/" + ANS[2];
+			temp = (ANS); //could be shortened to 1 line and return
+			returnThis = whatToPrint(temp);
 		}else if(operator.equals("-")){ //finds if the operator is -
 			ANS = subtractFrac(firstOperandAsInt, secondOperandAsInt);
-			return ANS[0] + "_" + ANS[1] + "/" + ANS[2];
+			temp = toMixedNum(reduce(toImproperFrac(ANS)));
+			returnThis = whatToPrint(temp);
 		}else if(operator.equals("*")){ //finds if the operator is *
 			ANS = multiplyFrac(firstOperandAsInt, secondOperandAsInt);
-			return ANS[0] + "_" + ANS[1] + "/" + ANS[2];
+			temp = toMixedNum(reduce(toImproperFrac(ANS)));
+			returnThis = whatToPrint(temp);
 		}else if(operator.equals("/")){ //finds if the operator is /
 			ANS = divideFrac(firstOperandAsInt, secondOperandAsInt);
-			return ANS[0] + "_" + ANS[1] + "/" + ANS[2];
+			temp = toMixedNum(reduce(toImproperFrac(ANS)));
+			returnThis = whatToPrint(temp);
 		}else{
-			return "ERROR"; 
+			returnThis = "ERROR"; 
 		}
+		return returnThis;
 		//return "whole:" + OP2Whole + " numerator:" + OP2Numerator + " denominator:" + OP2Denominator;
 	}
 
@@ -98,12 +106,14 @@ public class FracCalc{
 			//OP2[2] = OP2[2] * OP1[2]; //OP2 denom
 
 		}
-		if(OP1[0] < 0){ //if op1 is neg
-			ans[1] = OP1[1] - OP2[1];
-		}else{ //if both are not negative, or OP2 is neg
-			ans[1] = OP1[1] + OP2[1];
+		if(OP2[0] < 0){ //if op2 is neg
+			ans[0] = OP1[0] - OP2[0];
+		}else if(OP1[0] < 0){ 
+			ans[0] = OP2[0] - OP1[0];
+		}else{
+			ans[0] = OP1[0] + OP2[0];
 		}
-		ans[0] = OP1[0] + OP2[0];
+		ans[1] = OP1[1] + OP2[1];
 		ans[2] = OP1[2];
 		return ans;
 	}
@@ -134,27 +144,37 @@ public class FracCalc{
 
 	public static int[] multiplyFrac(int[] OP1, int[] OP2){ //OP1 is operand 1 array of parsedOperand(), Op2 is operand 2 array of parsedOperand()
 		int[] ans = new int[3]; //whole, numer, denom
-
-		ans[0] = OP1[0] * OP2[0]; //make improper frac, then multi?
-		ans[1] = OP1[1] * OP2[1]; //numer
-		ans[2] = OP1[2] * OP2[2]; //denom
-
+		//int OP1NumerImproper = OP1[0] * OP1[2] + OP1[]; //make first operand improper frac
+		int[] ImproperOP1 = toImproperFrac(OP1);
+		int[] ImproperOP2 = toImproperFrac(OP2);
+		ans[0] = 0;
+		ans[1] = ImproperOP1[1] * ImproperOP2[1]; //TODO make improper frac, then multi?
+		ans[2] = ImproperOP1[2] * ImproperOP2[2]; //denom
+		
 		return ans;
 	}
 
 	public static int[] divideFrac(int[] OP1, int[] OP2){ //OP1 is operand 1 array of parsedOperand(), Op2 is operand 2 array of parsedOperand()
 		int[] ans = new int[3]; //whole, numer, denom
-
-		if(OP1[0] != 0 && OP2[0] != 0){
-			ans[0] = OP1[0] * OP2[0];
-			ans[1] = OP1[1] * OP2[2]; //flip second one over and multiply
-			ans[2] = OP1[2] * OP2[1];
-		}else if(OP1[0] == 0){ //first OP is 0
-			ans[0] = 0;
-			ans[1] = 0;
-			ans[2] = 0;
+		
+	  /*if(OP1[0] != 0 && OP2[0] != 0){ //prevent boundary errors
+			ans[0] = OP1[0] / OP2[0];
 		}else{
-			ans[0] = null; //exception when trying to divide by zero
+			ans[0] = OP1[0] / OP2[0];
+		}
+		ans[1] = OP1[1] * OP2[2]; //flip one and multiply < \/\/\/
+		ans[2] = OP1[2] * OP2[1]; */
+		int[] ImproperOP1 = toImproperFrac(OP1);
+		int[] ImproperOP2 = toImproperFrac(OP2);
+	  //System.out.println(Arrays.toString(ImproperOP1));
+	  //System.out.println(Arrays.toString(ImproperOP2));
+		ans[0] = 0;
+		if(ImproperOP1[0] < 0){ //if both OP are neg, therefore outcome is pos
+			ans[1] = ImproperOP1[1] * ImproperOP2[2] * -1;
+			ans[2] = ImproperOP1[2] * ImproperOP2[1] * -1;
+		}else{
+			ans[1] = ImproperOP1[1] * ImproperOP2[2];
+			ans[2] = ImproperOP1[2] * ImproperOP2[1];
 		}
 		return ans;
 	}
@@ -215,6 +235,108 @@ public class FracCalc{
     		denominator = "1"; //if the operand has no fractions (21)
     		numerator = "0";
     	}	*/
-
+	}
+	
+	// converts to mixed num, called after reducing improper fracs
+	public static int[] toMixedNum(int[] in){
+		// could call reduce here instead of in produceanswer
+		assert in.length == 3;
+		int[] toReturn = new int [3];
+		int numer = in[1]; // could be simplified, just for the sake of typing it less -- numer
+		int denom = in[2]; // could be simplified, just for the sake of typing it less -- denom
+	    int remainder = numer % denom; //remainder
+	  //int w = n / d; //whole num
+		
+		if(numer > denom){
+			toReturn[0] =  (numer - (remainder)) / denom;
+			toReturn[1] = remainder;
+			toReturn[2] = denom;
+		}else{
+			toReturn[0] = 0;
+			toReturn[1] = numer;
+			toReturn[2] = denom;
+		}
+		
+		
+	  /*if(n > 0){
+			if(w == 0){
+				toReturn[0] = 0;
+				toReturn[1] = ;
+				toReturn[2] = ;
+			}
+		} */
+		/*if(a%b == 0){ //if could be simplified into whole
+			toReturn[0] = a/b;
+			toReturn[1] = 0;
+			toReturn[2] = 1;
+		}else if (a < b){ //if it is NOT improper
+			toReturn[0] = 0;
+			toReturn[1] = a;
+			toReturn[2] = b;
+		}else{  //improper, reduced or not
+			toReturn[0] = (a - (a % b))/b ;
+			toReturn[1] = a % b ;
+			toReturn[2] = b;
+		}*/
+		return toReturn;
+	} 
+	
+	// converts to improprt frac for easier calculation
+	public static int[] toImproperFrac(int[] in){
+		assert in.length == 3;
+		int[] returnArr = new int[3];
+		if(in[0] < 0){ //if op is neg
+			returnArr[1] = in[0] * in[2] - in[1]; //numer
+		}else{
+			returnArr[1] = in[0] * in[2] + in[1]; //numer
+		}
+		returnArr[0] = 0; //whole
+		returnArr[2] = in[2]; //denom
+		return returnArr;
+	}
+	
+	//finds the greatest common factor of numer and denom to reduce a fraction, takes unput from result of toImproperFrac()
+	public static int[] reduce(int[] in){
+		assert in.length == 3;
+		
+		int[] toReturn = new int[3]; //reduced input
+		
+		int a = in[1]; // could be simplified, just for the sake of typing it less -- numer
+		int b = in[2]; // could be simplified, just for the sake of typing it less -- denom
+        
+		int factor = 1;
+		
+		for(int i = 2; i < b; i ++){
+			if(a % i == 0 && b % i == 0){
+				factor = i;
+			}
+		}
+		if(a == b){
+			factor = a;
+		}else if(a == 0 || b == 0){
+			factor = b;      //kinda useless here
+		}
+	  /*while (b > 0){
+            int c = b;
+            b = a % b;
+            a = c;
+        }*/
+        
+        toReturn[0] = in[0];
+        toReturn[1] = in[1] / factor;
+        toReturn[2] = in[2] / factor;
+        
+        return toReturn;
+    } 
+	
+	//decides to print out just a whole number or a fraction
+	public static String whatToPrint(int[] temp){
+		String toReturn;
+		if(temp[1] != 0 && temp[2] != 1){ //if numer and denom is 0 and 1, respectively, prints out whole num, if they aren't, print out fraction
+			toReturn = temp[0] + "_" + temp[1] + "/" + temp[2];
+		}else{
+			toReturn = temp[0] + ""; // the +"" does not add anything, but adds temp[0](whole) to an empty string
+		}
+		return toReturn;
 	}
 }

@@ -106,12 +106,15 @@ public class FracCalc{
 			//OP2[2] = OP2[2] * OP1[2]; //OP2 denom
 
 		}
-		if(OP1[0] < 0){ //if op1 is neg
-			ans[1] = OP1[1] - OP2[1];
-		}else{ //if both are not negative, or OP2 is neg
-			ans[1] = OP1[1] + OP2[1];
+		if(OP2[0] < 0){ //if op2 is neg
+			ans[0] = OP1[0] - OP2[0];
+		}else if(OP1[0] < 0){ 
+			ans[0] = OP2[0] - OP1[0];
+		}else{
+			ans[0] = OP1[0] + OP2[0];
 		}
-		ans[0] = OP1[0] + OP2[0];
+		
+		ans[1] = OP1[1] + OP2[1];
 		ans[2] = OP1[2];
 		return ans;
 	}
@@ -244,7 +247,7 @@ public class FracCalc{
 		int denom = in[2]; // could be simplified, just for the sake of typing it less -- denom
 	    int remainder = numer % denom; //remainder
 	  //int w = n / d; //whole num
-		
+		//is numer pos or neg
 		if(numer > denom){
 			toReturn[0] =  (numer - (remainder)) / denom;
 			toReturn[1] = remainder;
