@@ -15,9 +15,41 @@ public class FracCalc{
 	public static void main(String[] args){
 		// TODO: Read the input from the user and call produceAnswer with an equation
 		//int test = 2;
+		System.out.println("========================================================================\n"
+						+ "\t\t\t Calculator On\n" 
+						+ "========================================================================");
 		Scanner in = new Scanner (System.in);
 		String userInput = in.nextLine();
 		//System.out.println("Test: " + test);
+		String returnThis;
+		//String[] in.split(" ");
+		String firstOperand = parseInput("-9035 + 0")[0];
+		String operator = parseInput("-9035 + 0")[1]; //determines what calculate function to run
+		String secondOperand = parseInput("-9035 + 0")[2];
+		int[] ANS = new int[3]; //it is to shorten the return command line, replaces "XFrac(firstOperandAsInt, secondOperandAsInt)"
+		int[] temp = new int[3];
+		//String toReturn;
+		//String operator;
+
+		// operand 1 vars
+		int op1Whole = parseOperand(firstOperand)[0];
+		int op1Numerator = parseOperand(firstOperand)[1];
+		int op1Denominator = parseOperand(firstOperand)[2];
+		int[] firstOperandAsInt = {op1Whole, op1Numerator, op1Denominator};
+
+		//operand 2 vars
+		int op2Whole = parseOperand(secondOperand)[0];
+		int op2Numerator = parseOperand(secondOperand)[1];
+		int op2Denominator = parseOperand(secondOperand)[2];
+		int[] secondOperandAsInt = {op2Whole, op2Numerator, op2Denominator};
+		System.out.println("op1Whole: " + op1Whole);
+		System.out.println("op1Numerator: " + op1Numerator);
+		System.out.println("op1Denominator: " + op1Denominator);
+		System.out.println("op2whole: " + op2Whole);
+		System.out.println("op2Numerator: " + op2Numerator);
+		System.out.println("op2denom: " + op2Denominator);
+		System.out.println("operator " + operator);
+		
 		while(!userInput.equals("quit")){                 //keeps prompting until quit
 			System.out.println(produceAnswer(userInput));
 			//System.out.println(gcf(produceAnswer(userInput)));
@@ -98,7 +130,11 @@ public class FracCalc{
 	//addition, calls after parseOperand
 	public static int[] addFrac(int[] op1, int[] op2){ //op1 is operand 1 array of parsedOperand(), op2 is operand 2 array of parsedOperand()
 		int[] ans = new int[3]; //whole, numer, denom
-
+		
+		if(op1[1] == 0 && op1[2] == 1 && op2[1] == 0 && op2[2] == 1){ //if both are whole nums
+			ans[0] = op1[0] + op2[0];
+		}
+		
 		if(op1[2] != op2[2]){ //if denoms don't match
 			op1[1] = op1[1] * op2[2]; //op1 numer
 			op2[1] = op2[1] * op1[2]; //op2 numer
@@ -200,16 +236,16 @@ public class FracCalc{
 
 		int[] arrToReturn = new int[3]; //empty array of length 3, set [0] to whole, [1] to numer, [2] to denom, return this arr
 
-		if(indexOfUnderscore != -1){
+		if(indexOfUnderscore != -1){ //if mixed
 			wholeNum = in.substring(0, indexOfUnderscore);
 			numerator = in.substring(indexOfUnderscore + 1, indexOfForeSlash);
 			denominator = in.substring(indexOfForeSlash + 1);
-		}else if(indexOfForeSlash != -1){
+		}else if(indexOfForeSlash != -1){ //if solo frac
 			wholeNum = "0";
 			numerator = in.substring(0, indexOfForeSlash);
 			denominator = in.substring(indexOfForeSlash + 1);
-		}else{
-			wholeNum = in;
+		}else{ //solo whole number
+			wholeNum = in.substring(0);
 			numerator = "0";
 			denominator = "1";
 		}
