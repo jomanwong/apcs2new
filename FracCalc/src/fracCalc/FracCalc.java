@@ -11,16 +11,20 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FracCalc{
-
-	public static void main(String[] args){
+	
+	public static void main (String[] args){
 		// TODO: Read the input from the user and call produceAnswer with an equation
 		//int test = 2;
+		System.out.println("========================================================================================================");
+		System.out.println("\t\t\t\t\t\tCalculator On");
+		System.out.println("========================================================================================================");
+
 		Scanner in = new Scanner (System.in);
 		String userInput = in.nextLine();
 		//System.out.println("Test: " + test);
 		while(!userInput.equals("quit")){                 //keeps prompting until quit
 			System.out.println(produceAnswer(userInput));
-			//System.out.println(gcf(produceAnswer(userInput)));
+			//System.out.println(gcd(produceAnswer(userInput)));
 			userInput = in.nextLine();
 		}
 		//System.out.println(produceAnswer("5_3/4 + 6_5/8"));
@@ -141,10 +145,15 @@ public class FracCalc{
 		//int OP1NumerImproper = OP1[0] * OP1[2] + OP1[]; //make first operand improper frac
 		int[] ImproperOP1 = toImproperFrac(OP1);
 		int[] ImproperOP2 = toImproperFrac(OP2);
-		ans[0] = 0;
-		ans[1] = ImproperOP1[1] * ImproperOP2[1]; //TODO make improper frac, then multi?
-		ans[2] = ImproperOP1[2] * ImproperOP2[2]; //denom
-
+		if(OP1[0] == 0 || OP2[0] == 0){
+			ans[0] = 0;
+			ans[1] = 0; 
+			ans[2] = 1; //denom
+		}else{
+			ans[0] = 0;
+			ans[1] = ImproperOP1[1] * ImproperOP2[1]; 
+			ans[2] = ImproperOP1[2] * ImproperOP2[2]; //denom
+		}
 		return ans;
 	}
 
