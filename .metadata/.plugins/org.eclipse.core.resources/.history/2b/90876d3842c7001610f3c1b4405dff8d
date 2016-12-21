@@ -144,14 +144,14 @@ public class FracCalc{
 		ans[0] = 0;
 		ans[1] = ImproperOP1[1] * ImproperOP2[1]; //TODO make improper frac, then multi?
 		ans[2] = ImproperOP1[2] * ImproperOP2[2]; //denom
-
+		
 		return ans;
 	}
 
 	public static int[] divideFrac(int[] OP1, int[] OP2){ //OP1 is operand 1 array of parsedOperand(), Op2 is operand 2 array of parsedOperand()
 		int[] ans = new int[3]; //whole, numer, denom
-
-		/*if(OP1[0] != 0 && OP2[0] != 0){ //prevent boundary errors
+		
+	  /*if(OP1[0] != 0 && OP2[0] != 0){ //prevent boundary errors
 			ans[0] = OP1[0] / OP2[0];
 		}else{
 			ans[0] = OP1[0] / OP2[0];
@@ -160,8 +160,8 @@ public class FracCalc{
 		ans[2] = OP1[2] * OP2[1]; */
 		int[] ImproperOP1 = toImproperFrac(OP1);
 		int[] ImproperOP2 = toImproperFrac(OP2);
-		//System.out.println(Arrays.toString(ImproperOP1));
-		//System.out.println(Arrays.toString(ImproperOP2));
+	  //System.out.println(Arrays.toString(ImproperOP1));
+	  //System.out.println(Arrays.toString(ImproperOP2));
 		ans[0] = 0;
 		if(ImproperOP1[0] < 0){ //if both OP are neg, therefore outcome is pos
 			ans[1] = ImproperOP1[1] * ImproperOP2[2] * -1;
@@ -230,35 +230,30 @@ public class FracCalc{
     		numerator = "0";
     	}	*/
 	}
-
+	
 	// converts to mixed num, called after reducing improper fracs
 	public static int[] toMixedNum(int[] in){
 		// could call reduce here instead of in produceanswer
 		assert in.length == 3;
-
+		
 		int[] toReturn = new int [3]; //<---return this
-
+		
 		int numer = in[1]; // could be simplified, just for the sake of typing it less -- numer
 		int denom = in[2]; // could be simplified, just for the sake of typing it less -- denom
 		int whole = in[0]; // could be simplified, just for the sake of typing it less -- denom
-		int remainder = numer % denom; //remainder
-		//int w = n / d; //whole num
+	    int remainder = numer % denom; //remainder
+	  //int w = n / d; //whole num
 		//is numer pos or neg
-		if(remainder < 0){
-			numer = numer + remainder; // could be simplified, just for the sake of clarity \/\/\/
-			whole = numer / denom;
-			numer = remainder;
-		}else{
-			numer = numer - remainder; // could be simplified, just for the sake of clarity \/\/\/
-			whole = numer / denom;
-			numer = remainder;
-		}
+		numer = numer - remainder; // could be simplified, just for the sake of clarity \/\/\/
+		whole = numer / denom;
+		numer = remainder;
+		
 		toReturn[0] = whole; // could be simplified, just for the sake of clarity \/\/\/
 		toReturn[1] = numer;
 		toReturn[2] = denom;
-
+		
 		return toReturn;
-		/*if(numer > denom){
+	    /*if(numer > denom){
 			toReturn[0] =  (numer - (remainder)) / denom;
 			toReturn[1] = remainder;
 			toReturn[2] = denom;
@@ -267,9 +262,9 @@ public class FracCalc{
 			toReturn[1] = numer;
 			toReturn[2] = denom;
 		}
-		 */
-
-		/*if(n > 0){
+		*/
+		
+	  /*if(n > 0){
 			if(w == 0){
 				toReturn[0] = 0;
 				toReturn[1] = ;
@@ -289,76 +284,52 @@ public class FracCalc{
 			toReturn[1] = a % b ;
 			toReturn[2] = b;
 		}*/
-
+		
 	} 
-
+	
 	// converts to improprt frac for easier calculation
 	public static int[] toImproperFrac(int[] in){
 		assert in.length == 3;
 		int[] returnArr = new int[3];
-
-		if(in[0] == 0 && in[1] == 0){//if not fraction
-			returnArr[1] = in[2];
-			returnArr[2] = 1;
-		}else if(in[0] == 0){//if no whole
-			returnArr[1] = in[1];
-			returnArr[2] = in[2];
-		}else if(in[0] != 0){//if its a mixed number
-			if(in[0] > 0 ){ //not neg
-				returnArr[1] = in[0] * in[2] + in[1]; //whole * numer + existing numer
-			}else if(in[0] < 0){//if neg
-				returnArr[1] = in[0] * in[2] - in[1]; //whole * numer - existing numer
-			}else{
-				returnArr[1] = in[0] * in[2];
-			}
-		}
-		returnArr[0] = 0;
-		returnArr[2] = in[2];
-		return returnArr;
-	}
-
-
-
-	/*if(in[0] < 0){ //if op is neg
+		if(in[0] < 0){ //if op is neg
 			returnArr[1] = in[0] * in[2] - in[1]; //numer
-		}else if(in[1] > in[2] || in[1] * -1 > in[2]){ // if already improper
-			returnArr[1] = in[1];
 		}else{
 			returnArr[1] = in[0] * in[2] + in[1]; //numer
 		}
 		returnArr[0] = 0; //whole
 		returnArr[2] = in[2]; //denom
-		return returnArr; */
-
-
+		return returnArr;
+	}
+	
 	//finds the greatest common factor of numer and denom to reduce a fraction, takes unput from result of toImproperFrac()
-	/* since this is called after improperfrac in produceanswer, the whole number that the reduced returns is always 0, but, i keep it this way
-	 * to adhere to tne entire format of keeping a fraction in 3 parts.
-	 */
 	public static int[] reduce(int[] in){
 		assert in.length == 3;
-
+		
 		int[] toReturn = new int[3]; //reduced input
-
+		
 		int numer = in[1]; // could be simplified, just for the sake of typing it less -- numer
 		int denom = in[2]; // could be simplified, just for the sake of typing it less -- denom
+        
+		int factor = 1;
+		
 		while (denom > 0){
-			int temp = denom;
-			denom = numer % denom; // % is remainder
-			numer = temp;
-		}
-		/*while (b > 0){
+	        int temp = denom;
+	        denom = numer % denom; // % is remainder
+	        numer = temp;
+	    }
+		factor = numer;
+	  /*while (b > 0){
             int c = b;
             b = a % b;
             a = c;
-        	}*/
-		toReturn[0] = in[0];
-		toReturn[1] = in[1] / numer;
-		toReturn[2] = in[2] / numer;
-
-		return toReturn;
-	} 
-
+        }*/
+        toReturn[0] = in[0];
+        toReturn[1] = in[1] / factor;
+        toReturn[2] = in[2] / factor;
+        
+        return toReturn;
+    } 
+	
 	//decides to print out just a whole number or a fraction
 	public static String whatToPrint(int[] temp){
 		String toReturn;
