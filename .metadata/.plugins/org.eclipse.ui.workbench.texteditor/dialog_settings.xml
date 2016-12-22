@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="op2" key="selection"/>
+		<item value="coef" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="coefficient"/>
 			<item value="OP2"/>
 			<item value="OP1"/>
 			<item value="toMixNum"/>
@@ -15,9 +16,9 @@
 			<item value="tomixednum"/>
 			<item value=".indexOf"/>
 			<item value="Math."/>
-			<item value="foil"/>
 		</list>
 		<list key="replacehistory">
+			<item value="coef"/>
 			<item value="op2"/>
 			<item value="op1"/>
 			<item value=".findKeyword"/>
