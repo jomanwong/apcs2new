@@ -1,0 +1,16 @@
+/** 
+ *  Joman Wong 2/22/17
+ */
+import java.io.*;
+import java.util.*;
+
+public class tempetureMonitor {
+	public static void main(String[]args){
+		changeInTemp();
+	}
+	public static void changeInTemp(){
+		Scanner input = Scanner(new File("File directory"));
+		double inputFile = input.nextDouble(); //assuming that all are numbers
+		System.out.println(inputFile);
+	}
+}
