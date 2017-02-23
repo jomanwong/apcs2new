@@ -1,0 +1,23 @@
+/** 
+ *  Joman Wong 2/22/17
+ */
+import java.io.*;
+import java.util.*;
+
+public class tempetureMonitor {
+	public static void main(String[]args){
+		changeInTemp();
+	}
+	public static void changeInTemp(){
+		System.out.println("Enter directory:");
+		Scanner directory = new Scanner(System.in); //reads string of file directory
+		String filePath = directory.next();
+		System.out.println("Fetching File@ " + filePath + " ..."); //test
+		System.out.println();
+		//Could use directory Scanner, but this is more clear in naming
+		Scanner fileReader = new Scanner(new File(filePath)); 
+		//use while hasNext.
+		double file = fileReader.nextDouble();
+
+	}
+}

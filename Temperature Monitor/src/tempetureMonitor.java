@@ -1,10 +1,12 @@
 /** 
  *  Joman Wong 2/22/17
  */
+
+//TODO: PROBLEM!! DOESN'T RECOGNIZE "System", "System cannot be resolved" 
 import java.io.*;
 import java.util.*;
 
-public class tempetureMonitor {
+public class TempetureMonitor {
 	public static void main(String[]args){
 		changeInTemp();
 	}
@@ -17,7 +19,20 @@ public class tempetureMonitor {
 		//Could use directory Scanner, but this is more clear in naming
 		Scanner fileReader = new Scanner(new File(filePath)); 
 		//use while hasNext.
-		double file = fileReader.nextDouble();
-
+		double file;
+		ArrayList<Double> readItems = new ArrayList<Double>(); 
+		while(fileReader.hasNext()){
+			file = fileReader.nextDouble();
+			readItems.add(fileReader);
+		}
+		double temp;
+		ArrayList<Double> differences = new ArrayList<Double>();
+		assert readItems.size > 1 : "Cannot Calculate Difference Due to Only ONE Temperature Value Was Read";
+		for(int i = 0; i < readItems.size() - 1; i++){
+			temp = readItems.get(i) - readItems.get(i+1);
+			//temp = Math.abs(temp); no need due to that a decrease in temperature is possible
+			differences.add(temp); //safe sotrage
+			System.out.println(readItems.get(i) + " to " + readItems.get(i+1) + ", change = " + differences.get(i));
+		}
 	}
 }
