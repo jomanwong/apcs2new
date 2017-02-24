@@ -16,22 +16,24 @@ import java.io.*;
 import java.util.*;
 import java.text.*;
 
-public class tempetureMonitor {
+public class TempetureMonitor {
 	public static void main(String[]args){
-		try{
-			changeInTemp();
-		}catch(FileNotFoundException e){
-			System.out.println("File not found");
-		}
+		//while(read() == true){
+			try{
+				changeInTemp();
+			}catch(FileNotFoundException e){
+				System.out.println("File not found");
+			}
+		//}
 	}
-	
+
 	public static void changeInTemp() throws FileNotFoundException{
 		DecimalFormat df = new DecimalFormat ("#.00");
 		System.out.println("Enter directory:");
 		Scanner directory = new Scanner(System.in); //reads string of file directory
 		String filePath = directory.next();
 		directory.close();
-		System.out.println("Fetching File@ " + filePath + " ..."); //test
+		System.out.println("Looking for File@ " + filePath + " ..."); //test
 		System.out.println();
 		//Could use directory Scanner, but this is more clear in naming
 		Scanner fileReader = new Scanner(new File(filePath)); 
@@ -59,5 +61,29 @@ public class tempetureMonitor {
 			differences.add(temp); //safe sotrage
 			System.out.println(readItems.get(i) + " to " + readItems.get(i+1) + ", change = " + df.format(differences.get(i)));
 		}
+		//read();
 	}
+/*
+	public static boolean read(){
+		System.out.println("Search for file? Yes or No");
+		Scanner response = new Scanner(System.in); 
+		String userResponse = response.next();
+		boolean stopLoop = false;
+		while (stopLoop == false){
+			if(userResponse.equalsIgnoreCase("yes")){
+				response.close();
+				return true;
+			}else if(userResponse.equalsIgnoreCase("no")){
+				response.close();
+				return false;
+			}else{			
+				System.out.println("Unrecognized response. Enter Yes or No");
+				userResponse = response.next();
+				stopLoop = true;
+			}
+		}
+		response.close();
+		return false;
+	}
+	*/
 }
