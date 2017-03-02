@@ -19,9 +19,7 @@ public class Spreadsheet implements Grid
 						"          |          |");
 		
 			}else{
-				System.out.println(i + " |"/*1 space followed by |*/ + "          |          |          |" +
-						"          |          |          |          |          |          |          |"+
-						"          |          |");
+				System.out.println("ran");
 			}
 		}
 	}
