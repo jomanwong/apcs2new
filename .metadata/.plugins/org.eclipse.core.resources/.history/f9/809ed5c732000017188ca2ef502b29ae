@@ -11,6 +11,6 @@ public class TextExcel{
 	    // Add your command loop here
 		//XXX could model after magpie4 runner or fracCalc
 		//\/\/ test initalize
-		Spreadsheet.Spreadsheet();
+		Spreadsheet.initalizeSheet();
 	}
 }

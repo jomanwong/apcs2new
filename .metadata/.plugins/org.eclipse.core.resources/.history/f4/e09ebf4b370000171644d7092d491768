@@ -10,9 +10,6 @@ public class Spreadsheet implements Grid{
 		 * then "|", followed by 10 spaces, and "|"
 		 * repeat, until reaches 12th column
 		 */
-		
-		// array to store spreadsheet info String[][] spreadSheet = new String
-		
 		System.out.println("   |A         |B         |C         |D         |E         |F         |G         |" +
 				"H         |I         |J         |K         |L         |");
 		for(int i = 1; i <= 20; i++){
@@ -31,31 +28,36 @@ public class Spreadsheet implements Grid{
 	
 	
 	@Override
-	public String processCommand(String command){
+	public String processCommand(String command)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int getRows(){
+	public int getRows()
+	{
 		// TODO 20 rows are required
 		return 20;
 	}
 
 	@Override
-	public int getCols(){
+	public int getCols()
+	{
 		// TODO 12 columns are required
 		return 12;
 	}
 
 	@Override
-	public Cell getCell(Location loc){
+	public Cell getCell(Location loc)
+	{
 		// TODO Auto-generated method stub
-		return ;
+		return null;
 	}
 
 	@Override
-	public String getGridText(){
+	public String getGridText()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
