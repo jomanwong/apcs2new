@@ -6,11 +6,25 @@ import java.util.Scanner;
 // Update this file with your own code.
 
 public class TextExcel{
-
+	
+	//XXX VARS HERE
+	private static String userInput;
+	
 	public static void main(String[] args){
 	    // Add your command loop here
 		//XXX could model after magpie4 runner or fracCalc
 		//\/\/ test initalize
+		
+		Spreadsheet ss = new Spreadsheet(); //prints out sheet format
 		Spreadsheet.Spreadsheet();
+		Scanner console = new Scanner(System.in);
+		
+		while(true){
+			userInput = console.nextLine();
+			if(userInput.equalsIgnoreCase("quit")){
+	/*let's*/	break; //it down!
+			}
+			ss.processCommand(userInput);
+		}
 	}
 }

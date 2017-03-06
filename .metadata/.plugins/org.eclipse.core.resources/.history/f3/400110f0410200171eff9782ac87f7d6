@@ -1,0 +1,26 @@
+package textExcel;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+// Update this file with your own code.
+
+public class TextExcel{
+	
+	//XXX VARS HERE
+	private static String userInput;
+	
+	public static void main(String[] args){
+	    // Add your command loop here
+		//XXX could model after magpie4 runner or fracCalc
+		//\/\/ test initalize
+		
+		Spreadsheet.Spreadsheet(); //prints out sheet format
+		
+		Scanner console = new Scanner(System.in);
+		
+		while(userInput.equalsIgnoreCase("quit") != true){
+			userInput = console.nextLine();
+		}
+	}
+}

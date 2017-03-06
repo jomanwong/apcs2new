@@ -1,0 +1,29 @@
+package textExcel;
+
+//Update this file with your own code.
+
+public class SpreadsheetLocation implements Location{
+	
+	private final int rows;
+	private final int cols;
+	
+    @Override
+    public int getRow(){
+    	
+        // TODO Auto-generated method stub
+        return this.rows;
+    }
+
+    @Override
+    public int getCol(){
+    	
+        // TODO Auto-generated method stub
+        return this.cols;
+    }
+    
+    public SpreadsheetLocation(String cellName){
+    	
+        // TODO: Fill this out with your own code
+    }
+
+}
