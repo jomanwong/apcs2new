@@ -18,13 +18,15 @@ public class TextExcel{
 		Spreadsheet ss = new Spreadsheet(); //prints out sheet format
 		Spreadsheet.Spreadsheet();
 		Scanner console = new Scanner(System.in);
+		userInput = console.nextLine();
 		
-		while(true){
+		while(ss.processCommand(userInput).equalsIgnoreCase("exit loop") == false){
+			System.out.println(ss.processCommand(userInput));
+			//if(userInput.equalsIgnoreCase("quit")){
+		///*let's*/	break; //it down!
+			//}
 			userInput = console.nextLine();
-			if(userInput.equalsIgnoreCase("quit")){
-	/*let's*/	break; //it down!
-			}
-			ss.processCommand(userInput);
 		}
+		console.close();
 	}
 }

@@ -1,5 +1,7 @@
 package textExcel;
 
+import java.util.regex.*;
+
 // Update this file with your own code.
 
 public class Spreadsheet implements Grid{
@@ -41,6 +43,12 @@ public class Spreadsheet implements Grid{
 	public String processCommand(String inputCommand){
 		// TODO Auto-generated method stub
 		this.command = inputCommand;
+														//*** commands ***
+		if(this.command.equalsIgnoreCase("quit")){		//"quit"
+			return "exit loop";
+		}else if(this.command.matches("[A-L][1-9]")){	//cell i.e. "D20" //needs attention
+			return "regex works";
+		}
 		return this.command; //for checkpoint 1 only the command "quit" needs to be done correctly
 	}
 
