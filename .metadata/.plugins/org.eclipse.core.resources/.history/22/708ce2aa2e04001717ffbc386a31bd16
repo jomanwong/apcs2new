@@ -48,12 +48,9 @@ public class Spreadsheet implements Grid{
 			return "exit loop";							//cell i.e. "D20" 
 		}else if(this.command.matches("[A-L][1-9]") || this.command.matches("[A-L][1][0-9]") || this.command.matches("[A-L][2][0]")){	
 			String cmdParts[] = this.command.split("[A-L]");
-			//cmdParts[0] = this.command.charAt(0) + "";
-			//Tests values:
+			cmdParts[0] = this.command.charAt(0) + "";
 			spreadSheet[0][0] = "Hello"; //A1
-			spreadSheet[19][1] = "Hai"; //B20
-			spreadSheet[12][9] = "Hello again"; //J13
-			
+			spreadSheet[12][9] = "Hello again"; //J12
 			String value = spreadSheet[Integer.parseInt(cmdParts[1]) - 1][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
 			return value;
 		}
