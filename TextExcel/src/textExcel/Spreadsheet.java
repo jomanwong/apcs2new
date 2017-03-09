@@ -10,7 +10,7 @@ public class Spreadsheet implements Grid{
 	private static int rows = 20;
 	private static int cols = 12;
 	private String command; //whatever user inputs
-	String[][] spreadSheet = new String[rows][cols];
+	static String[][] spreadSheet = new String[rows][cols]; //stores full text
 	
 	
 	public static void Spreadsheet(){
@@ -20,7 +20,7 @@ public class Spreadsheet implements Grid{
 		 * repeat, until reaches 12th column
 		 */
 		
-		
+	
 		
 		System.out.println("   |A         |B         |C         |D         |E         |F         |G         |" +
 				"H         |I         |J         |K         |L         |");
@@ -29,11 +29,13 @@ public class Spreadsheet implements Grid{
 				System.out.println(i + "  |"/*2 spaces followed by |*/ + "          |          |          |" +
 						"          |          |          |          |          |          |          |"+
 						"          |          |");
-		
 			}else{
 				System.out.println(i + " |"/*1 space followed by |*/ + "          |          |          |" +
 						"          |          |          |          |          |          |          |"+
 						"          |          |");
+			}
+			for(int j = 0; j < 12; j++){
+				spreadSheet[i-1][j] = "          10";
 			}
 		}
 	}
@@ -54,8 +56,10 @@ public class Spreadsheet implements Grid{
 			spreadSheet[19][1] = "Hai"; //B20
 			spreadSheet[12][9] = "Hello again"; //J13
 			
-			String value = spreadSheet[Integer.parseInt(cmdParts[1]) - 1][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
+			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
 			return value;
+		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){
+			
 		}
 		return this.command; //for checkpoint 1 only the command "quit" needs to be done correctly
 	}
@@ -81,6 +85,7 @@ public class Spreadsheet implements Grid{
 	@Override
 	public String getGridText(){
 		// TODO Auto-generated method stub
+		
 		return null; //null is holder?
 	}
 
