@@ -13,7 +13,7 @@ public class Spreadsheet implements Grid{
 	static String[][] spreadSheet = new String[rows][cols]; //stores full text
 	
 	
-	public static void Spreadsheet(){
+	public Spreadsheet(){
 		/**XXX FORMAT XXX
 		 * 3 spaces, left justified, space(s) could be taken by row number
 		 * then "|", followed by 10 spaces, and "|"
@@ -45,11 +45,12 @@ public class Spreadsheet implements Grid{
 	public String processCommand(String inputCommand){
 		// TODO Auto-generated method stub
 		this.command = inputCommand;
-														//*** commands ***
+		String cmdParts[] = this.command.split("[A-L]");										//*** commands ***
+		
 		if(this.command.equalsIgnoreCase("quit")){		//"quit"
 			return "exit loop";							//cell i.e. "D20" 
 		}else if(this.command.matches("[A-L][1-9]") || this.command.matches("[A-L][1][0-9]") || this.command.matches("[A-L][2][0]")){	
-			String cmdParts[] = this.command.split("[A-L]");
+			
 			//cmdParts[0] = this.command.charAt(0) + "";
 			//Tests values:
 			spreadSheet[0][0] = "Hello"; //A1
@@ -59,9 +60,12 @@ public class Spreadsheet implements Grid{
 			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
 			return value;
 		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){
+			//return "";
+		}else if(this.command.split("")){
 			
+		}else{
+			return this.command; //for checkpoint 1 only the command "quit" needs to be done correctly
 		}
-		return this.command; //for checkpoint 1 only the command "quit" needs to be done correctly
 	}
 
 	@Override
@@ -79,14 +83,21 @@ public class Spreadsheet implements Grid{
 	@Override
 	public Cell getCell(Location loc){
 		// TODO Auto-generated method stub
-		return null; //null is holder?
+		String cmdParts[] = this.command.split("[A-L]");				
+		String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
+		return value; //null is holder?
 	}
 
 	@Override
 	public String getGridText(){
 		// TODO Auto-generated method stub
-		
-		return null; //null is holder?
+		String returnThis = "";
+		for(String[] i: this.spreadSheet){
+			for(String j: i){
+				returnThis += j;
+			}
+		}
+		return returnThis; //null is holder?
 	}
 
 }

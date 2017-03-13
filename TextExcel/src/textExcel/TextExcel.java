@@ -16,7 +16,7 @@ public class TextExcel{
 		//\/\/ test initalize
 		
 		Spreadsheet ss = new Spreadsheet(); //prints out sheet format
-		Spreadsheet.Spreadsheet();
+		//Spreadsheet.Spreadsheet();
 		Scanner console = new Scanner(System.in);
 		userInput = console.nextLine();
 		
