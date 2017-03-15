@@ -10,7 +10,7 @@ public class Spreadsheet implements Grid{
 	private static int rows = 20;
 	private static int cols = 12;
 	private String command; //whatever user inputs
-	static String[][] spreadSheet = new String[rows][cols]; //stores full text
+	static Cell[][] spreadSheet = new String[rows][cols]; //stores full text
 	
 	
 	public Spreadsheet(){
@@ -35,7 +35,7 @@ public class Spreadsheet implements Grid{
 						"          |          |");
 			}
 			for(int j = 0; j < 12; j++){
-				spreadSheet[i-1][j] = "          10";
+				spreadSheet[i-1][j] = new EmptyCell;
 			}
 		}
 	}
@@ -59,10 +59,10 @@ public class Spreadsheet implements Grid{
 			
 			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
 			return value;
-		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){
-			String locInput = this.command.split(" ")[0];
-			String cmdParts[] = this.locInput.split("[A-L]");
-			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65];
+		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){ //assign value
+			String locInput = this.command.split(" ")[0] + "";
+			String cmdParts2[] = locInput.split("[A-L]");
+			String value = this.command.split("\"")[2];
 		}else if(this.command.split("")){
 			
 		}else{
