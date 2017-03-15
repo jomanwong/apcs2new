@@ -3,7 +3,7 @@ package textExcel;
 import java.util.regex.*;
 
 // Update this file with your own code.
-
+//testing repo
 public class Spreadsheet implements Grid{
 	
 	//XXX VARS HERE
@@ -60,9 +60,7 @@ public class Spreadsheet implements Grid{
 			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
 			return value;
 		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){
-			String locInput = this.command.split(" ")[0];
-			String cmdParts[] = this.locInput.split("[A-L]");
-			String value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65];
+			//return "";
 		}else if(this.command.split("")){
 			
 		}else{

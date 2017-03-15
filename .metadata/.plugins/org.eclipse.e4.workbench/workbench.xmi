@@ -72,7 +72,7 @@
           <tags>persp.newWizSC:org.eclipse.mylyn.tasks.ui.wizards.new.repository.task</tags>
           <tags>persp.actionSet:edu.wpi.first.wpilib.plugins.core.actionSet</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_jszxEwAyEee2SJjqDjr4KQ" selectedElement="_jszxHQAyEee2SJjqDjr4KQ" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_jszxFAAyEee2SJjqDjr4KQ" containerData="2064" selectedElement="_jszxFQAyEee2SJjqDjr4KQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_jszxFAAyEee2SJjqDjr4KQ" containerData="1040" selectedElement="_jszxFQAyEee2SJjqDjr4KQ">
               <children xsi:type="basic:PartStack" xmi:id="_jszxFQAyEee2SJjqDjr4KQ" elementId="left" containerData="6000" selectedElement="_jszxFgAyEee2SJjqDjr4KQ">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_jszxFgAyEee2SJjqDjr4KQ" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_js0YkgAyEee2SJjqDjr4KQ"/>
@@ -85,8 +85,8 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_jszxHAAyEee2SJjqDjr4KQ" elementId="org.eclipse.egit.ui.RepositoriesView" toBeRendered="false" ref="_js0_UAAyEee2SJjqDjr4KQ"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_jszxHQAyEee2SJjqDjr4KQ" containerData="7936" selectedElement="_jszxHgAyEee2SJjqDjr4KQ" horizontal="true">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_jszxHgAyEee2SJjqDjr4KQ" containerData="6054" selectedElement="_jszxHwAyEee2SJjqDjr4KQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_jszxHQAyEee2SJjqDjr4KQ" containerData="8960" selectedElement="_jszxHgAyEee2SJjqDjr4KQ" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_jszxHgAyEee2SJjqDjr4KQ" containerData="6525" selectedElement="_jszxHwAyEee2SJjqDjr4KQ">
                 <children xsi:type="basic:PartSashContainer" xmi:id="_jszxHwAyEee2SJjqDjr4KQ" containerData="7237" selectedElement="_jszxIAAyEee2SJjqDjr4KQ">
                   <children xsi:type="advanced:Placeholder" xmi:id="_jszxIAAyEee2SJjqDjr4KQ" elementId="org.eclipse.ui.editorss" containerData="7362" ref="_js0YfAAyEee2SJjqDjr4KQ"/>
                   <children xsi:type="basic:PartStack" xmi:id="_jszxIQAyEee2SJjqDjr4KQ" elementId="PartStack@61e4cf9b" containerData="2638" selectedElement="_jszxIgAyEee2SJjqDjr4KQ">
@@ -104,7 +104,7 @@
                   <children xsi:type="advanced:Placeholder" xmi:id="_jszxKQAyEee2SJjqDjr4KQ" elementId="org.eclipse.ui.views.ProgressView" toBeRendered="false" ref="_js0Y3wAyEee2SJjqDjr4KQ"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartSashContainer" xmi:id="_jszxKgAyEee2SJjqDjr4KQ" containerData="1446" selectedElement="_jszxLQAyEee2SJjqDjr4KQ">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_jszxKgAyEee2SJjqDjr4KQ" containerData="975" selectedElement="_jszxLQAyEee2SJjqDjr4KQ">
                 <children xsi:type="basic:PartStack" xmi:id="_jszxKwAyEee2SJjqDjr4KQ" elementId="org.eclipse.mylyn.tasks.ui.views.tasksMStack" toBeRendered="false" containerData="5000">
                   <children xsi:type="advanced:Placeholder" xmi:id="_jszxLAAyEee2SJjqDjr4KQ" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" toBeRendered="false" ref="_js0_agAyEee2SJjqDjr4KQ"/>
                 </children>
@@ -285,7 +285,7 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_js0YfwAyEee2SJjqDjr4KQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TextExcel.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TextExcel.java&quot; partName=&quot;TextExcel.java&quot; title=&quot;TextExcel.java&quot; tooltip=&quot;TextExcel/src/textExcel/TextExcel.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TextExcel.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;447&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TextExcel.java&quot; partName=&quot;TextExcel.java&quot; title=&quot;TextExcel.java&quot; tooltip=&quot;TextExcel/src/textExcel/TextExcel.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TextExcel.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;159&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -307,7 +307,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_5np_UAenEeergd_o9rPkFw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Spreadsheet.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Spreadsheet.java&quot; partName=&quot;Spreadsheet.java&quot; title=&quot;Spreadsheet.java&quot; tooltip=&quot;TextExcel/src/textExcel/Spreadsheet.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/Spreadsheet.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;609&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Spreadsheet.java&quot; partName=&quot;Spreadsheet.java&quot; title=&quot;Spreadsheet.java&quot; tooltip=&quot;TextExcel/src/textExcel/Spreadsheet.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/Spreadsheet.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2461&quot; selectionTopPixel=&quot;662&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -672,7 +672,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_js0_cgAyEee2SJjqDjr4KQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_SBL2wAmcEeerM5612jn7cg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_js53sAAyEee2SJjqDjr4KQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_07y_gAmcEeeZfLjBmnBz-Q" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_js53sAAyEee2SJjqDjr4KQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_js0_fwAyEee2SJjqDjr4KQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -699,7 +699,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_js0_wwAyEee2SJjqDjr4KQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_SBWO0AmcEeerM5612jn7cg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_js5RigAyEee2SJjqDjr4KQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_07y_igmcEeeZfLjBmnBz-Q" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_js5RigAyEee2SJjqDjr4KQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_js0_zgAyEee2SJjqDjr4KQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
