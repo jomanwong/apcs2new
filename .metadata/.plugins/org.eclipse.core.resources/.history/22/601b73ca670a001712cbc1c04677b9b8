@@ -37,6 +37,9 @@ public class Spreadsheet implements Grid{
 						}
 						System.out.println();
 						
+						/*"          |          |          |" +
+						"          |          |          |          |          |          |          |"+
+						"          |          |");*/
 			}else{
 				System.out.print(i + " |"/*1 space followed by |*/); 
 				
@@ -45,6 +48,9 @@ public class Spreadsheet implements Grid{
 				}
 				System.out.println();
 				
+				/* + "          |          |          |" +
+						"          |          |          |          |          |          |          |"+
+						"          |          |");*/
 			}
 		}
 	}
@@ -60,16 +66,14 @@ public class Spreadsheet implements Grid{
 			return "quit"; //works also with return this.command, b/c it types in quit	   	//cell i.e. "D20" 
 		}else if(this.command.matches("[A-L][1-9]") || this.command.matches("[A-L][1][0-9]") || this.command.matches("[A-L][2][0]")){	
 			
-			Cell value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
-			return value.fullCellText();
-			
 			//cmdParts[0] = this.command.charAt(0) + "";
 			/*//Tests values: OBSELETE
 			spreadSheet[0][0] = "Hello"; //A1
 			spreadSheet[19][1] = "Hai"; //B20
 			spreadSheet[12][9] = "Hello again"; //J13
 			*/
-			
+			Cell value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
+			return value.fullCellText();
 		/*}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){ //assign value
 			String locInput = this.command.split(" ")[0] + "";
 			String cmdParts2[] = locInput.split("[A-L]");

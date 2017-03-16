@@ -11,9 +11,7 @@ public class EmptyCell implements Cell {
 	@Override
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		//return "          ";
-		//in place to show it actually works \/
-		return "1234567890" ;
+		return "          ";
 	}
 
 }

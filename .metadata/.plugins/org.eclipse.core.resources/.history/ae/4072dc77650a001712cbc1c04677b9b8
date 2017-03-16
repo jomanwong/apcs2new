@@ -20,7 +20,7 @@ public class TextExcel{
 		Scanner console = new Scanner(System.in);
 		userInput = console.nextLine();
 		
-		while(ss.processCommand(userInput).equalsIgnoreCase("quit") == false){
+		while(ss.processCommand(userInput).equalsIgnoreCase("exit loop") == false){
 			System.out.println(ss.processCommand(userInput));
 			//if(userInput.equalsIgnoreCase("quit")){
 		///*let's*/	break; //it down!
