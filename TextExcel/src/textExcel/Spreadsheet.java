@@ -49,6 +49,10 @@ public class Spreadsheet implements Grid{
 		}
 	}
 	
+	public static boolean isNumeric(String str){
+	  return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+	}
+	
 	
 	@Override
 	public String processCommand(String inputCommand){
@@ -70,13 +74,23 @@ public class Spreadsheet implements Grid{
 			spreadSheet[12][9] = "Hello again"; //J13
 			*/
 			
-		/*}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){ //assign value
-			String locInput = this.command.split(" ")[0] + "";
-			String cmdParts2[] = locInput.split("[A-L]");
-			String value = this.command.split("\"")[2];
+		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){
+			String loc = this.command.split(" ")[0] + "";
+			String cmdParts2[] = loc.split("[A-L]");
+			String value =  this.command.split(" ")[2] + "";
+			String input[] = value.split("\"");
+			
+			/*if(input[0].charAt(input[0].length()-1) == '%'){ //precentCell
+				spreadSheet[(Integer.parseInt(cmdParts2[1]) - 1)][this.command.charAt(0) - 65] = new PrecentCell(input[0]);
+			}else if(isNumeric(input[0])){ 					   //valueCell
+				spreadSheet[(Integer.parseInt(cmdParts2[1]) - 1)][this.command.charAt(0) - 65] = new ValueCell(input[0]);
+			}else */
+			if(isNumeric(input[0]) == false){
+				spreadSheet[(Integer.parseInt(cmdParts2[1]) - 1)][this.command.charAt(0) - 65] = new TextCell(input[0]);
+			}
+			
 	//	}else if(this.command.split("")){
 			
-		*/
 		}else{
 			return this.command;
 		}
