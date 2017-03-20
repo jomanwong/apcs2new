@@ -21,7 +21,9 @@ public class TextExcel{
 		userInput = console.nextLine();
 		
 		while(ss.processCommand(userInput).equalsIgnoreCase("quit") == false){
-			System.out.println(ss.processCommand(userInput));
+			if(ss.processCommand(userInput).equals("done") == false){
+				System.out.println(ss.processCommand(userInput));
+			}
 			//if(userInput.equalsIgnoreCase("quit")){
 		///*let's*/	break; //it down!
 			//}

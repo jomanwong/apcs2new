@@ -13,7 +13,7 @@ public class EmptyCell implements Cell {
 		// TODO Auto-generated method stub
 		//return "          ";
 		//in place to show it actually works \/
-		return "1234567890" ;
+		return "" ; //thought it want 10 spaces for empty cell?? But on test cases it asks for empty string, or 10 spaces applies only to abbreviated for printing purposes
 	}
 
 }

@@ -27,7 +27,7 @@ public class SpreadsheetLocation implements Location{
     public SpreadsheetLocation(String cellName){
     	
         // TODO: Fill this out with your own code
-    	this.coords = cellName;
+    	this.coords = cellName.toUpperCase(); //apparently there is a test with lowercase user inputs
     }
 
 }

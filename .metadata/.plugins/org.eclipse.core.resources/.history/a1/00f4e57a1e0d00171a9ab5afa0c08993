@@ -1,0 +1,32 @@
+package textExcel;
+
+public class TextCell implements Cell {
+	//spreadsheet 
+	
+	private String stringStored;
+	
+	public TextCell(String in){
+		this.stringStored = in;
+	}
+	
+	@Override
+	public String abbreviatedCellText() {
+		// TODO Auto-generated method stub
+		String tenCharString = "";
+		if(this.stringStored.length() >= 10){
+			for(int i = 0; i < 10; i++){
+				tenCharString += stringStored.charAt(i);
+			}
+			return tenCharString;
+		}else{
+			return this.stringStored;
+		}
+	}
+
+	@Override
+	public String fullCellText() {
+		// TODO Auto-generated method stub
+		return this.stringStored;
+	}
+
+}
