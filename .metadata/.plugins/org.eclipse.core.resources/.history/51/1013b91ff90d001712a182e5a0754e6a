@@ -1,11 +1,3 @@
-/***
- *  Joman Wong
- *  
- *  NOTE: There are a lot of white spaces, as it is less clumped, therefore easier on my eye to focus during the night.
- */
-
-
-
 package textExcel;
 
 import java.util.regex.*;
@@ -111,6 +103,40 @@ public class Spreadsheet implements Grid{
 		
 		}
 
+
+		/*this.command = inputCommand;
+		String cmdParts[] = this.command.split("[A-L]");																				//*** commands ***
+		String cmdPartsBySpaces[] = this.command.split(" ");
+
+		if(this.command.equalsIgnoreCase("quit")){																						//"quit"
+
+			return "quit"; //works also with return this.command, b/c it types in quit	   	
+
+		}else if(this.command.matches("[A-L][1-9]") || this.command.matches("[A-L][1][0-9]") || this.command.matches("[A-L][2][0]")){	//inspectCell i.e. "D20" 
+
+			return inspectCell(this.command);
+
+		}else if(this.command.split(" ")[1].equalsIgnoreCase("=")){ 																	//assignCell
+
+			String loc = this.command.split(" ")[0] + "";
+			String cmdParts2[] = loc.split("[A-L]");
+			String value =  this.command.split(" ")[2] + "";
+			String input[] = value.split("\"");
+
+			if(isNumeric(input[0]) == false){ //if string setting to is NOT NUMBERS ONLY
+
+				spreadSheet[(Integer.parseInt(cmdParts2[1]) - 1)][this.command.charAt(0) - 65] = new TextCell(input[0]);
+				System.out.println("done changed");
+				return "done"; 																											//so that it compiles, will not print done
+
+			}else{
+
+				return "done"; 																											//so that it compiles, will not print done
+			}
+
+		}else{
+			return inputCommand;
+		}*/
 	}	
 
 	@Override
@@ -128,6 +154,9 @@ public class Spreadsheet implements Grid{
 	@Override
 	public Cell getCell(Location loc){
 		// TODO Auto-generated method stub
+		/*String cmdParts[] = this.command.split("[A-L]");				//no longer needed, obsolete, because asks for type Location, not user input of string
+		Cell value = spreadSheet[(Integer.parseInt(cmdParts[1]) - 1)][this.command.charAt(0) - 65]; //65 is from ASCII decimal value of A
+		return value; //null is holder? */
 
 		return spreadSheet [loc.getRow()][loc.getCol()]; //note to self, notice method returns type Cell, not String
 	}

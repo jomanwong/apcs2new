@@ -14,7 +14,7 @@ public class TextCell implements Cell {
 		
 		String abbreviatedText = stringStored;
 		
-		if(stringStored.charAt(0) == '\"'){  //has to be first to pass testEmptyStrinCell, probably because the test tests empty quotation marks
+		if(stringStored.charAt(0) == '\"'){  //has to be first to pass testEmptyStrinCell
 			
 			abbreviatedText = stringStored.substring(1, stringStored.length() - 1);
 			
@@ -29,7 +29,6 @@ public class TextCell implements Cell {
 			
 			//autofill spaces
 			while(abbreviatedText.length() < 10){
-				
 				abbreviatedText += " ";
 
 			}
