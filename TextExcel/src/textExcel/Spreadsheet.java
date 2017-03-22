@@ -1,7 +1,7 @@
 /***
  *  Joman Wong
  *  
- *  NOTE: There are a lot of white spaces, as it is less clumped, therefore easier on my eye to focus during the night.
+ *  NOTE: There are a lot of white spaces, as it is less clumped, it's easier on me eyes to focus during the night.
  */
 
 
