@@ -20,8 +20,8 @@ public class RealCell implements Cell {
 		return this.contents;
 	}
 	
-	public double getDoubleValue(String doubleStr){
-		return Double.parseDouble(doubleStr);
+	public double getDoubleValue(){
+		return Double.parseDouble(contents);
 	}
 
 }
