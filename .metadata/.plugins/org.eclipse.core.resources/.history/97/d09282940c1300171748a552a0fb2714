@@ -2,8 +2,7 @@ package textExcel;
 
 
 public class PercentCell extends RealCell {
-	
-	private String percentValue;
+	String percentValue;
 	
 	public PercentCell(String in) {
 		super(in);

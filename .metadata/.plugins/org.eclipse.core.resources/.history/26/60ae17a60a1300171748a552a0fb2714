@@ -141,11 +141,7 @@ public class Spreadsheet implements Grid{
 	public void assignToCell(String cell, String in){
 		//Assign the String of a cell to the input value
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); //thx to Mr DeHeer pointing out I could use SpreedsheetLocation
-		if(in.charAt(in.length() - 1) == '%'){ //percent Cell
-			spreadSheet[loc.getRow()][loc.getCol()] = new PercentCell(in);
-		}else{
-			spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim());
-		}
+		spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim());
 	}
 
 	public void clearCell(String cell){
