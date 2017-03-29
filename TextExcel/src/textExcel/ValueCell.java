@@ -13,6 +13,8 @@ public class ValueCell extends RealCell {
 	@Override
 	public String abbreviatedCellText(){
 		String abbreviatedText = valueStored;
+
+		abbreviatedText = getDoubleValue(abbreviatedText) + "";
 		
 		if(abbreviatedText.length() > 10){    
 
@@ -29,8 +31,9 @@ public class ValueCell extends RealCell {
 
 			return abbreviatedText;
 		}
-
-		public String fullCellText() {
-
-		}
 	}
+
+	public String fullCellText() {
+		return valueStored;
+	}
+}

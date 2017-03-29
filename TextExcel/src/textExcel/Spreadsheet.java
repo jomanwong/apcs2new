@@ -65,50 +65,55 @@ public class Spreadsheet implements Grid{
 	@Override
 	public String processCommand(String inputCommand){
 		// TODO Auto-generated method stub
-		//assert inputCommand.length() > 0: ""; 																						//Deals with cases in CP 1, empty inputs
-		
-		if(inputCommand.equals("")){																									//Deals with cases in CP 1, empty inputs
+
+		/*try{
+			processCommand(inputCommand); 			//overflow
+		}catch(NumberFormatException e){
+			System.out.println("ERROR! Incorrect Argument.");
+		}*/
+
+		if(inputCommand.equals("")){												//Deals with cases in CP 1, empty inputs
 			return inputCommand;
 		}
-		
+
 		//VAR HERE
 		String command = inputCommand;
-																																		//*** commands ***
-		
-		
-		if(inputCommand.equals("quit")){																								// "quit"
+		//*** commands ***
+
+
+		if(inputCommand.equals("quit")){											// "quit"
 			return "quit";
 		}
 
 		//VAR HERE
 		String[] cmdParts = command.split(" ", 3); //really important to limit to make first 3 parts, or else will fail some tests
 
-		
-		if(cmdParts.length == 1 && !cmdParts[0].toLowerCase().equals("clear")){    														// cell inspection (i.e. A1). Return the value at that cell
+
+		if(cmdParts.length == 1 && !cmdParts[0].toLowerCase().equals("clear")){    	// cell inspection (i.e. A1). Return the value at that cell
 
 			return inspectCell(cmdParts[0]);
 
 
-		}else if(cmdParts.length == 3) { //only 3 part command																			// assignment to string values (i.e. A1 = "Hello").
-			
+		}else if(cmdParts.length == 3) { //only 3 part command						// assignment to string values (i.e. A1 = "Hello").
+
 			assignToCell(cmdParts[0],cmdParts[2]);
 			return getGridText();
-			
-		}else if(cmdParts[0].toLowerCase().equals("clear") && cmdParts.length == 2){ 													// clearing a particular cell (i.e. clear A1).
+
+		}else if(cmdParts[0].toLowerCase().equals("clear") && cmdParts.length == 2){ // clearing a particular cell (i.e. clear A1).
 
 			clearCell(cmdParts[1]);
 			return getGridText();
 
-		}else if(cmdParts[0].toLowerCase().equals("clear") && cmdParts.length == 1){  													// clear sheet, know it is clear because only 1 part
+		}else if(cmdParts[0].toLowerCase().equals("clear") && cmdParts.length == 1){ // clear sheet, know it is clear because only 1 part
 
 			clear();
 			return getGridText();
 
 
 		}else{
-			
-			return inputCommand; //WHY DOES THIS NOT GET RUN???
-		
+
+			return inputCommand; 
+
 		}
 
 	}	
@@ -142,9 +147,11 @@ public class Spreadsheet implements Grid{
 		//Assign the String of a cell to the input value
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); //thx to Mr DeHeer pointing out I could use SpreedsheetLocation
 		if(in.charAt(in.length() - 1) == '%'){ //percent Cell
-			spreadSheet[loc.getRow()][loc.getCol()] = new PercentCell(in);
+			spreadSheet[loc.getRow()][loc.getCol()] = new PercentCell(in); // percent cell
+		}else if(in.charAt(in.length() - 1) != '\"'){ // value cell
+			spreadSheet[loc.getRow()][loc.getCol()] = new ValueCell(in);
 		}else{
-			spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim());
+			spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim()); // text cell
 		}
 	}
 

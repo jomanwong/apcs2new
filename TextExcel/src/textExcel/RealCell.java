@@ -1,26 +1,41 @@
 package textExcel;
 
-public class RealCell implements Cell {
-	
+abstract class RealCell implements Cell {
+
 	private String contents;
-	
+
 	public RealCell(String in){
-		this.contents = in;
+		this.contents = in + "";
 	}
-	
+
 	@Override
 	public String abbreviatedCellText() {
-		// TODO Auto-generated method stub
-		return "          ";
+		String abbreviatedText = contents;
+		
+		if(abbreviatedText.length() > 10){    
+
+			abbreviatedText = contents.substring(0, 10);
+			return abbreviatedText;
+
+		}else{
+			//autofill spaces
+			while(abbreviatedText.length() < 10){
+
+				abbreviatedText += " ";
+
+			}
+
+			return abbreviatedText;
+		}
 	}
 
 	@Override
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		return this.contents;
+		return getDoubleValue(this.contents) + "";
 	}
-	
-	public double getDoubleValue(String doubleStr){
+
+	public double getDoubleValue(String doubleStr){ 
 		return Double.parseDouble(doubleStr);
 	}
 

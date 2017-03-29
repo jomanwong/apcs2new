@@ -35,7 +35,7 @@ public class PercentCell extends RealCell {
 		double returnThis;
 		percent = percent.substring(0, percent.length() - 1); //takes out '%' Note could use indexOf, but this takes less iterations
 		returnThis = Double.parseDouble(percent);
-		returnThis = returnThis / 100.00;
+		returnThis = returnThis / 100;
 		return returnThis;
 	}
 	
