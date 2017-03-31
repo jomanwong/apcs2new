@@ -125,16 +125,16 @@ public class Spreadsheet implements Grid{
 	}
 
 	@Override
-	public Cell getCell(Location loc){
-		// TODO Auto-generated method stub
-	
-		return spreadSheet [loc.getRow()][loc.getCol()]; //note to self, notice method returns type Cell, not String
-	}
-
-	@Override
 	public int getCols(){
 		// TODO 12 columns are required
 		return this.cols; //same as returning length of spreadSheet array but shorter
+	}
+
+	@Override
+	public Cell getCell(Location loc){
+		// TODO Auto-generated method stub
+
+		return spreadSheet [loc.getRow()][loc.getCol()]; //note to self, notice method returns type Cell, not String
 	}
 
 	public String inspectCell(String cell){

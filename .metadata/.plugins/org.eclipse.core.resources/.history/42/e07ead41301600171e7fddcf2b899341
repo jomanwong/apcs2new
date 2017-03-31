@@ -67,7 +67,7 @@ public class Spreadsheet implements Grid{
 		// TODO Auto-generated method stub
 
 		/*try{
-			processCommand(inputCommand); 			//overflow, recursion but in a bad way, but it however, should catch NumberFormatException
+			processCommand(inputCommand); 			//overflow
 		}catch(NumberFormatException e){
 			System.out.println("ERROR! Incorrect Argument.");
 		}*/
@@ -125,16 +125,16 @@ public class Spreadsheet implements Grid{
 	}
 
 	@Override
-	public Cell getCell(Location loc){
-		// TODO Auto-generated method stub
-	
-		return spreadSheet [loc.getRow()][loc.getCol()]; //note to self, notice method returns type Cell, not String
-	}
-
-	@Override
 	public int getCols(){
 		// TODO 12 columns are required
 		return this.cols; //same as returning length of spreadSheet array but shorter
+	}
+
+	@Override
+	public Cell getCell(Location loc){
+		// TODO Auto-generated method stub
+
+		return spreadSheet [loc.getRow()][loc.getCol()]; //note to self, notice method returns type Cell, not String
 	}
 
 	public String inspectCell(String cell){
@@ -148,10 +148,8 @@ public class Spreadsheet implements Grid{
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); //thx to Mr DeHeer pointing out I could use SpreedsheetLocation
 		if(in.charAt(in.length() - 1) == '%'){ //percent Cell
 			spreadSheet[loc.getRow()][loc.getCol()] = new PercentCell(in); // percent cell
-		}else if(in.charAt(in.length() - 1) != '\"'){  //value cell
-			spreadSheet[loc.getRow()][loc.getCol()] = new ValueCell(in); // value cell
-		}else if(in.charAt(0) == '('){ //Formula cell
-			spreadSheet[loc.getRow()][loc.getCol()] = new FormulaCell(in); //Formula cell
+		}else if(in.charAt(in.length() - 1) != '\"'){ // value cell
+			spreadSheet[loc.getRow()][loc.getCol()] = new ValueCell(in);
 		}else{
 			spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim()); // text cell
 		}

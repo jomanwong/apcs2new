@@ -12,7 +12,7 @@ public class PercentCell extends RealCell {
 	}
 	
 	@Override
-	public String abbreviatedCellText(){
+	public String abbreviatedCellText(){ 
 		String abbreviatedText = this.percentValue.substring(0, this.percentValue.indexOf('.')) + "%";
 		//autofill spaces
 		while(abbreviatedText.length() < 10){
