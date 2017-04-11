@@ -1,6 +1,8 @@
 /***
  *  Joman Wong
  *  
+ *  @author Joman
+ *  
  *  NOTE: There are a lot of white spaces, as it is less clumped, it's easier on me eyes to focus during the night.
  */
 
@@ -78,7 +80,7 @@ public class Spreadsheet implements Grid{
 
 		//VAR HERE
 		String command = inputCommand;
-		//*** commands ***
+																					//*** commands ***
 
 
 		if(inputCommand.equals("quit")){											// "quit"
@@ -143,15 +145,22 @@ public class Spreadsheet implements Grid{
 		return getCell(loc).fullCellText();
 	}
 
+	/*
+	 * magically, if you put the else if statement for formula cell before value cell, it works!
+	 * For some reason it mistakes a call to formula cell to be one of real cell, then to value cell.
+	 * also, errors at (unknown source), just, what?
+	 * 
+	 */
+	
 	public void assignToCell(String cell, String in){
 		//Assign the String of a cell to the input value
 		SpreadsheetLocation loc = new SpreadsheetLocation(cell.toUpperCase()); //thx to Mr DeHeer pointing out I could use SpreedsheetLocation
 		if(in.charAt(in.length() - 1) == '%'){ //percent Cell
 			spreadSheet[loc.getRow()][loc.getCol()] = new PercentCell(in); // percent cell
-		}else if(in.charAt(in.length() - 1) != '\"'){  //value cell
-			spreadSheet[loc.getRow()][loc.getCol()] = new ValueCell(in); // value cell
 		}else if(in.charAt(0) == '('){ //Formula cell
 			spreadSheet[loc.getRow()][loc.getCol()] = new FormulaCell(in); //Formula cell
+		}else if(in.charAt(in.length() - 1) != '\"'){  //value cell
+			spreadSheet[loc.getRow()][loc.getCol()] = new ValueCell(in); // value cell
 		}else{
 			spreadSheet[loc.getRow()][loc.getCol()] = new TextCell(in.trim()); // text cell
 		}
