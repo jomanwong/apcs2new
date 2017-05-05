@@ -33,7 +33,7 @@ public class FormulaCell extends RealCell {
 	}
 
 	public String fullCellText() {
-		return getDoubleValue(userInput) + "";
+		return userInput;
 	}
 
 	public String inspectCell(String cell){
@@ -60,7 +60,7 @@ public class FormulaCell extends RealCell {
 		}
 		
 		double returnThis = Double.parseDouble(inParts[0]);	//first number of formula
-		if(inParts.length <= 3){
+		if(inParts.length == 3){
 			if(inParts[1].equals("+")) { 					//addition 
 				returnThis += Double.parseDouble(inParts[2]);
 			}else if(inParts[1].equals("-")) { 				//subtraction
