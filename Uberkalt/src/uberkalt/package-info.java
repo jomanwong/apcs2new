@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author APCS2
+ * @authors Joman Wong, Tyler Hackman, Kevin Wong
  *
  */
 package uberkalt;
