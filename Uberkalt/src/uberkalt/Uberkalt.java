@@ -1,5 +1,8 @@
 package uberkalt;
 
 public class Uberkalt {
-
+	
+	public static void main(String[] args){
+		Window.createWindow();
+	}
 }
