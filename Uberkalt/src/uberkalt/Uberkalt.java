@@ -1,17 +1,31 @@
 package uberkalt;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Uberkalt {
+public class Uberkalt extends JPanel implements ActionListener{
 	
-	public static void main(String[] args){
-		Window uberKalt = new Window("UberKalt");
-		Window.createWindow(uberKalt);
-		while(true){
-			if(IsKeyPressed.isWPressed()){
-				//do something
-			}
-		}
+	Timer tm = new Timer(5, this);
+	int x = 0, velX = 2;
+	
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
+		
+		g.setColor(Color.RED);
+		g.fillRect(x, 30, 50, 30);
+		
+		tm.start();	
 	}
+	
+	public void actionperformed(ActionEvent e){
+		x = x + velX;
+		repaint();
+		
+	}
+	
+	
 }
