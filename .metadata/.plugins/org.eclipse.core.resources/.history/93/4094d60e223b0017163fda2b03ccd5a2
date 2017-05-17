@@ -1,0 +1,14 @@
+package uberkalt;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.event.KeyEvent;
+
+public class KeyPressed {
+
+	private static volatile boolean shiftPressed = false;
+    public static boolean isShiftPressed() {
+        synchronized (KeyPressed.class) {
+            return shiftPressed;
+        }
+        
+}

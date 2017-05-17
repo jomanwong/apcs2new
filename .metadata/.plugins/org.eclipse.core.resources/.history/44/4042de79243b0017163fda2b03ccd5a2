@@ -6,11 +6,11 @@ import java.awt.*;
 public class Uberkalt {
 	
 	public static void main(String[] args){
-		Window uberKalt = new Window("UberKalt");
-		Window.createWindow(uberKalt);
+		Window.createWindow();
+		
 		while(true){
 			if(IsKeyPressed.isWPressed()){
-				//do something
+				System.out.println("W is pressed");
 			}
 		}
 	}
