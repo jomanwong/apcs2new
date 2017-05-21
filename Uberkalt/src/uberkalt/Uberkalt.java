@@ -2,6 +2,7 @@ package uberkalt;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
@@ -21,9 +22,17 @@ public class Uberkalt extends JPanel implements ActionListener{
 		tm.start();	
 	}
 	
-	public void actionperformed(ActionEvent e){
+	public void actionPerformed(ActionEvent e){
 		x = x + velX;
 		repaint();
+		
+	}
+	
+	public static void main(String[] args){
+		Uberkalt u = new Uberkalt();
+		JFrame jf = new JFrame();
+		jf.setTitle("Uberkalt");
+		
 		
 	}
 	
