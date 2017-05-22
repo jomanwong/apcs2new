@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.swing.Timer;
 import javax.swing.JFrame;
@@ -14,8 +16,8 @@ import javax.swing.JPanel;
 
 public class MainAnimation extends JPanel implements ActionListener, KeyListener{
 
-	static int windowX = 1920;
-	static int windowY = 1080;
+	static int windowX = 1280;
+	static int windowY = 720;
 	int playerWidth = 50; //X
 	int playerHeight = 50; //Y
 
@@ -65,17 +67,18 @@ public class MainAnimation extends JPanel implements ActionListener, KeyListener
 			velY = 0;
 			y = 0;
 		}
-		if(y > windowY - playerHeight){ //down side, go back up top
+		if(y > windowY - playerHeight){ //down side
 			velY = 0;
-			y = windowY - 70 - playerHeight;
+			y = windowY - 50 - playerHeight;
 		}
 
 		x = x + velX;
 		y = y + velY;
 		repaint();
 	}
-
-	public void keyPressed(KeyEvent e){
+		
+	
+	/*public void keyPressed(KeyEvent e){
 
 		int c = e.getKeyCode();
 			if(c == KeyEvent.VK_A){ //go left
@@ -94,16 +97,16 @@ public class MainAnimation extends JPanel implements ActionListener, KeyListener
 					velX = 6;
 					velY = 0;
 			}
-	}
+	}*/
 
-	public void KeyTyped(KeyEvent e){
+	/*public void KeyTyped(KeyEvent e){
 
 	}
 
 	public void keyReleased(KeyEvent e){
 		velX = 0;
 		velY = 0;
-	}
+	}*/
 
 	public static void main(String[] args){
 		MainAnimation t = new MainAnimation();

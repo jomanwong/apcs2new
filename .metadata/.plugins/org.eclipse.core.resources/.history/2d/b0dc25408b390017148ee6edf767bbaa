@@ -1,9 +1,0 @@
-package uberkalt;
-import javax.swing.*;
-
-public class Uberkalt {
-	
-	public static void main(Strings[] args){
-		
-	}
-}
