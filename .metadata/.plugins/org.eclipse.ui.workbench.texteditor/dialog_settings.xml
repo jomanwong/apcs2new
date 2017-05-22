@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="percent" key="selection"/>
+		<item value="keyReleased" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="keyReleased"/>
+			<item value="vely"/>
+			<item value="velx"/>
 			<item value="precent"/>
 			<item value="returnThis"/>
 			<item value="testLongShortStringCell"/>
 			<item value="coefficient"/>
 			<item value="OP2"/>
-			<item value="OP1"/>
-			<item value="toMixNum"/>
-			<item value="toMixedNum"/>
 		</list>
 		<list key="replacehistory">
+			<item value="velY"/>
+			<item value="velX"/>
 			<item value="percent"/>
 			<item value="RETURN_THIS"/>
 			<item value="coef"/>
@@ -30,7 +32,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="390" key="DIALOG_HEIGHT"/>
-		<item value="771" key="DIALOG_X_ORIGIN"/>
+		<item value="586" key="DIALOG_X_ORIGIN"/>
 		<item value="298" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
