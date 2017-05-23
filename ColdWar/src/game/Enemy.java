@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class Enemy extends EnemyModel {
 
     private Bomb bomb;
-    private final String explodsionImg = "src/images/alien.png";
+    private final String explodsionImg = "src/images/enemy.png";
 
    public Enemy(){
 	   

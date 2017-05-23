@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 public class Shoot extends Enemy {
 
-    private final String shotImg = "src/images/shot.png";
+    private final String shotImg = "src/game/images/shot.png";
     private final int H_SPACE = 6;
     private final int V_SPACE = 1;
 
