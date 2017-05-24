@@ -1,0 +1,37 @@
+package game;
+
+
+public interface Commons extends MainAnimation{
+
+	static int windowX = 1280;
+	static int windowY = 720;
+	static int playerWidth = 50; //X
+	int playerHeight = 50; //Y
+
+	int numBombs = 9;
+
+	static String playershot = "false";
+
+	//int playerXPos;
+	//int playerYPos;
+
+	static int projectileY = 0;
+	static int projectileVelY = 3;
+
+
+	//boolean paused = false;
+	boolean startGame = false;
+	//player timer
+	//x and y are starting positions, starts at bottom center
+	int x = windowX/2 - playerWidth/2;
+	int y = windowY - playerHeight - 50;
+
+	static int velX = 0;
+	static int velY = 0;
+
+	//int bombVelX = 1; bombs fall downward
+	int bombVelY = 1;
+
+	int bombX = 20;
+	int bombY = 5;
+}

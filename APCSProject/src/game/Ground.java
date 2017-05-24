@@ -14,12 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Ground {
-	public void paint(Graphics g){
-		
-		g.drawRect(0, 720 - 50, 1280, 50);
-
-//		g.setColor(Color.GREEN);
-	//	g.fillRect(0, 0, playerWidth, playerHeight);
+	public static void paint(Graphics g, Color c, int x, int y, int w, int l){
+		g.setColor(c);
+		g.fillRect(x, y, w, l);
 		
 	}
 }

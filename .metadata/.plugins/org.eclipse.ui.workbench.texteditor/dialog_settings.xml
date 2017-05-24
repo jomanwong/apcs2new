@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="explodsionImg" key="selection"/>
+		<item value="paint" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="paint"/>
 			<item value="alienImg"/>
 			<item value="Alien"/>
 			<item value="Aliens"/>
@@ -15,7 +16,6 @@
 			<item value="enemies"/>
 			<item value="keyReleased"/>
 			<item value="vely"/>
-			<item value="velx"/>
 		</list>
 		<list key="replacehistory">
 			<item value="explodsionImg"/>
