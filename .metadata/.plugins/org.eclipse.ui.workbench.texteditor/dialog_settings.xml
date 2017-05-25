@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="paint" key="selection"/>
+		<item value="wonGame" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="wonGame"/>
+			<item value="playerShot"/>
+			<item value="projectileX"/>
+			<item value="winGame"/>
+			<item value="ctrlFrame"/>
+			<item value="vel"/>
 			<item value="paint"/>
 			<item value="alienImg"/>
-			<item value="Alien"/>
-			<item value="Aliens"/>
-			<item value="aliens"/>
-			<item value="enemies"/>
-			<item value="keyReleased"/>
-			<item value="vely"/>
 		</list>
 		<list key="replacehistory">
+			<item value="wonGame"/>
 			<item value="explodsionImg"/>
 			<item value="Enemy"/>
 			<item value="enemies"/>
@@ -25,7 +26,6 @@
 			<item value="velX"/>
 			<item value="percent"/>
 			<item value="RETURN_THIS"/>
-			<item value="coef"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

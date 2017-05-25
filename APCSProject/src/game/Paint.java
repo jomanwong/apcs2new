@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Paint {
-	public static void paint(Graphics g, Color c, int x, int y, int w, int l){
+	public static void paintRect(Graphics g, Color c, int x, int y, int w, int l){
 		g.setColor(c);
 		g.fillRect(x, y, w, l);
 		
