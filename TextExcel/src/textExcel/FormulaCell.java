@@ -53,10 +53,18 @@ public class FormulaCell extends RealCell {
 	public double getDoubleValue(String in){
 		//String str = in.substring(2, in.length() - 2); instead of splitting and take away neg's, split then make new array
 		String [] temp = in.split(" "); //split at spaces, results in [(][#][+][#][)] //BUT WHAT IF IT'S JUST 1 NUMBER ( # ) -> [(][#][)]
-		String [] inParts = new String[temp.length - 2]; //takes off the two damn parenthesis that were secretly plotting to overthrow me
+		String [] inParts = new String[temp.length - 2]; //takes off the two darn parenthesis that were secretly plotting to overthrow me
 		//wish .clone() could have start and end points
 		for(int j = 0; j < inParts.length; j ++){ //FILL THIS!!
 			inParts[j] = temp[j + 1];
+		}
+		
+		if(inParts[0].substring(0, 1).contains("[A-L]")){
+			inParts[0] = inspectCell(inParts[0]) + "";
+		}
+		
+		if(inParts.length > 1 && inParts[2].substring(0, 1).contains("[A-L]")){
+			inParts[2] = inspectCell(inParts[2]) + "";
 		}
 		
 		double returnThis = Double.parseDouble(inParts[0]);	//first number of formula
