@@ -53,7 +53,7 @@ public class FormulaCell extends RealCell {
 	public double getDoubleValue(String in){
 		//Cell[][] ss = Spreadsheet.spreadSheet;
 		//String str = in.substring(2, in.length() - 2); instead of splitting and take away neg's, split then make new array
-		String[] temp = in.split(" "); //split at spaces, results in [ (][#][+][#][)] //BUT WHAT IF IT'S JUST 1 NUMBER ( # ) -> [(][#][)]
+		String[] temp = in.split(" "); //split at spaces, results in [(][#][+][#][)] //BUT WHAT IF IT'S JUST 1 NUMBER ( # ) -> [(][#][)]
 		String[] inParts = new String[temp.length - 2]; //takes off the two darn parenthesis that were secretly plotting to overthrow me
 
 		//
@@ -88,9 +88,6 @@ public class FormulaCell extends RealCell {
 			if(nCells > 1 && inParts[0].equalsIgnoreCase("avg")){ //if it calls to find average and there's actually a need to find average
 				returnThis = avg;
 			}*/
-		}else if(inParts[0].equalsIgnoreCase("[A-L][0-20]")){
-			
-			
 		}else if(inParts.length == 3){ //if not calling to find "sum" or "avg"
 			if(inParts[1].equals("+")) { 					//addition 
 				returnThis += Double.parseDouble(inParts[2]);
